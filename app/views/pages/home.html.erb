@@ -1,11 +1,14 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<%= form_with url: search_path, method: :get, class: "d-flex" do %>
+
+
+
+<%# formulaire de la homepage pour trouver le sujet principal %>
+<%= form_with url: search_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
-    class: "form-control",
-    placeholder: "Find a movie"
+    placeholder: "sujet de recherche"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= submit_tag "Rechercher" %>
 <% end %>
