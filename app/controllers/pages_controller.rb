@@ -20,6 +20,7 @@ class PagesController < ApplicationController
     # @response = HTTParty.post(url: api_url, header: header)
     # @response = HTTParty.post(url: api_url, headers: { header: header, 'Content-Type' => 'application/json' })
     @response = HTTParty.post(url: api_url, headers: { header: header, 'Content-Type' => 'application/json' })
+
   end
 
   def tryresult
