@@ -6,8 +6,8 @@ Help RH vous aide à répondre à votre question et à trouver le texte applicab
 
 <%# formulaire de la homepage pour trouver le sujet principal %>
 <%= form_with url: search_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
+  <%= text_field_tag :main_subject,
+    params[:main_subject],
     placeholder: "sujet de recherche"
   %>
   <%= submit_tag "Rechercher" %>
@@ -15,7 +15,7 @@ Help RH vous aide à répondre à votre question et à trouver le texte applicab
 
 <h2>Sujets récurrents</h2>
 
-<%= link_to "congés payés", search_path(:main_subject => "congés payés") %>
+<%= link_to "congés payés", search_path(main_subject: "congés payés") %>
 <%= link_to "heures supplémentaires", search_path(:main_subject => "heures supplémentaires") %>
 <%= link_to "fin de contrat", search_path(:main_subject => "fin de contrat") %>
 <%= link_to "période d'essai", search_path(:main_subject => "période d'essai") %>
