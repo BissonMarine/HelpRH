@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get "search", to: "pages#search"
   get "result", to: "pages#result"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  #Routes-test pour l'API :
+  get '/oauth/callback', to: 'data#create_session'
+  get '/index', to: 'data#index'
+  root to: 'data#index'
 end
