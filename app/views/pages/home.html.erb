@@ -13,4 +13,10 @@ Help RH vous aide à répondre à votre question et à trouver le texte applicab
   <%= submit_tag "Rechercher" %>
 <% end %>
 
+<h2>Sujets récurrents</h2>
 
+<%= link_to "congés payés", search_path(:main_subject => "congés payés") %>
+<%= link_to "heures supplémentaires", search_path(:main_subject => "heures supplémentaires") %>
+<%= link_to "fin de contrat", search_path(:main_subject => "fin de contrat") %>
+<%= link_to "période d'essai", search_path(:main_subject => "période d'essai") %>
+<%= link_to "rémunération", search_path(:main_subject => "rémunération") %>
