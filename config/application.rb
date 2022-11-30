@@ -24,24 +24,4 @@ module HelpRH
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
   end
-
-  module RailsOauthTestClient
-    class Application < Rails::Application
-      # Settings in config/environments/* take precedence over those specified here.
-      # Application configuration should go into files in config/initializers
-      # -- all .rb files in that directory are automatically loaded.
-      if Rails.env.development?
-        yml_file = 'local_env_for_oauth.yml'
-      end
-      config.before_configuration do
-        env_file = File.join(Rails.root, 'config', yml_file)
-        YAML.load(File.open(env_file)).each do |key, value|
-          ENV[key.to_s] = value
-        end if File.exists?(env_file)
-      end
-    end
-  end
-
-
-
 end
