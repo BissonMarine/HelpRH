@@ -8,6 +8,6 @@ class PagesController < ApplicationController
   end
 
   def result
-
   end
+
 end
