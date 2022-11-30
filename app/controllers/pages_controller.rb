@@ -12,6 +12,8 @@ class PagesController < ApplicationController
     @token = get_token
     url_api = "https://sandbox-api.piste.gouv.fr/dila/legifrance-beta/lf-engine-app/consult/kaliContIdcc"
     response = HTTParty.post(url_api, headers: headers_api, body: body_api.to_json)
+    # @headers_api = headers_api
+    # @title = response["titre"]
     # byebug
     # @response = response
     @ccn_name = response["titre"]
@@ -34,13 +36,18 @@ class PagesController < ApplicationController
     oauth_response.parsed_response["access_token"]
   end
 
+# attention: pour activer le cache, lancer "rails dev:cache" dans le terminal
   def headers_api
-    {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-      # Token en dur (valable 1h : bearer) =
-      'Authorization': "Bearer 1r8gt1P4pXJSLE0oPsYcOxplskt8vUMJqqbR3ZTUsih4buRPJ4lwLW"
-    }
+    @session_token ||= Rails.cache.fetch("Authorization", expires_in: 1.hours) do
+      get_token
+    end
+  {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+    # Token en dur (valable 1h : bearer) =
+    'Authorization': "Bearer #{@session_token}"
+  }
+
   end
 
   # Clé / valeur recherchée : IDCC 44 par exemple
