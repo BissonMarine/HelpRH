@@ -7,14 +7,14 @@ class LegifrancesController < ApplicationController
 
   private
 
-  # A utiliser où ?
+  # A utiliser où ? A ADAPTER => JMA
   def headers
-    token = Rails.cache.fetch("rx-access-token", expires_in: 1.hours) do
+    token = Rails.cache.fetch("Authorization", expires_in: 1.hours) do
       ENV.fetch["API_KEY"]
     end
 
     {
-      "x-access-token" => token
+      "Authorization" => token
     }
   end
 
