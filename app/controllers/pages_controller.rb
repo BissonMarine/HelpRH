@@ -59,8 +59,8 @@ class PagesController < ApplicationController
   def body_token
     {
       "grant_type": "client_credentials",
-      "client_id": '57bfb2ae-eab4-4cb0-bdb1-7ca1d734a3e5',
-      "client_secret": 'f5baae2e-9989-4ee4-ba75-b183610959f0',
+      "client_id": ENV['CLIENT_ID'],
+      "client_secret": ENV['CLIENT_SECRET'],
       "scope": "openid"
     }
   end
