@@ -25,23 +25,29 @@
 
 <% @chapters.each do |chapter| %>
   <%# <p>Article <%= article["num"] %></p><br>
-  <%= chapter["title"] %><br>
-<% end %>
 
-<% @chapters[0]["articles"].each do |article| %>
-  <% if article["num"].count = 1 %> <%# -> .count non reconnu : undifined_method
-      <%= article["num"] %>
-    <% else article["etat"] == "VIGUEUR_ETEN" %>
-      <%= article["num"] %>
+  <% if chapter["etat"] == "VIGUEUR_ETEN" || chapter["etat"] == "VIGUEUR_NON_ETEN"%>
+    <% if chapter["etat"] %>
+      <%= chapter["title"] %><br>
+      <% @chapter_articles = chapter["articles"]%>
+      <% @chapter_articles.each do |article| %>
+        <% if @chapter_articles.count == 1 %>
+          <p>Article <%= article["num"]%></p><br>
+          <%= article["content"] %>
+        <% elsif @chapter_articles.count > 1 %>
+          <% displayed_article = [] %>
+          <% if article["etat"] == "VIGUEUR_ETEN"%>
+            <p>Article <%= article["num"]%></p><br>
+            <% displayed_article << article["num"] %>
+            <%= article["content"] %>
+          <% elsif article["etat"] == "VIGUEUR" && displayed_article == nil %>
+            <p>Article <%= article["num"]%></p><br>
+            <% displayed_article << article["num"] %>
+          <% else %>
+          <% end %>
+        <% else %>
+        <% end %>
+      <% end%>
+    <%end%>
   <% end %>
-<% end %>
-
-<%#  <% @num_articles = chapter["articles"] %>
-<%#    <% @num_articles.each do |article| %>
-<%#      <% if @num_articles.count = 1 %>
-<%#         <%= article["num"] %>
-<%#        <% elsif @num_articles.size > 1 && article["etat"] == "VIGUEUR_ETEN" %>
-<%#          <%= article["num"] %>
-<%#        <% end %>
-<%#    <% end %>
-<%#<% end %>
+<%end%>

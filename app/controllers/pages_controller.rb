@@ -19,13 +19,13 @@ class PagesController < ApplicationController
     @ccn_name = response["titre"]
     @idcc = response["numeroTexte"]
     # @sections = response["sections"] -> ne renvoie rien
-    @vigueur = response["sections"][0]["sections"][0]["etat"]
-    @clause = response["sections"][0]["sections"][0]["title"]
-    # @articles = response["sections"][0]["sections"][0]["sections"][0]["articles"][0] -> ne renvoie rien ?
-    @path_title = response["sections"][0]["sections"][0]["sections"][0]["articles"][0]['pathTitle']
-    @content = response["sections"][0]["sections"][0]["sections"][0]["articles"][0]['content']
-    @article_num = "Article #{response['sections'][0]['sections'][0]['sections'][0]['articles'][0]['num']}"
-    @articles = response['sections'][0]['sections'][0]['sections'][0]['articles']
+    # @vigueur = response["sections"][0]["sections"][0]["etat"]
+    # @clause = response["sections"][0]["sections"][0]["title"]
+    # # @articles = response["sections"][0]["sections"][0]["sections"][0]["articles"][0] -> ne renvoie rien ?
+    # @path_title = response["sections"][0]["sections"][0]["sections"][0]["articles"][0]['pathTitle']
+    # @content = response["sections"][0]["sections"][0]["sections"][0]["articles"][0]['content']
+    # @article_num = "Article #{response['sections'][0]['sections'][0]['sections'][0]['articles'][0]['num']}"
+    # @articles = response['sections'][0]['sections'][0]['sections'][0]['articles']
 
     @chapters = response["sections"][0]["sections"][0]["sections"]
   end
@@ -62,8 +62,8 @@ class PagesController < ApplicationController
   def body_token
     {
       "grant_type": "client_credentials",
-      "client_id": ENV['CLIENT_ID'],
-      "client_secret": ENV['CLIENT_SECRET'],
+      "client_id": ENV["CLIENT_ID"],
+      "client_secret": ENV["CLIENT_SECRET"],
       "scope": "openid"
     }
   end
