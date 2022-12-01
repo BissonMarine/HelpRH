@@ -14,17 +14,34 @@
 <br>
 <%# => méthode qui récupère tous les articles du CHAPITRE  %>
 <%# => @path_title[1] : méthode qui récupère le NOM du CHAPITRE  %>
-<%= @path_title[1] %><br>
-<% @articles.each do |article| %>
-  <p>Article <%= article["num"] %></p><br>
-  <%= article["content"] %>
-<% end %>
+<%#<%= @path_title[1] %><br>
+<%#<% @articles.each do |article| %>
+<%#  <p>Article <%= article["num"] %></p><br>
+<%#  <%= article["content"] %>
+<%#<% end %>
 
 
 <p>################################################################</p>
 
 <% @chapters.each do |chapter| %>
-  <%# <p>Article <%= article["num"] %></p><br> %>
-  <%= chapter["title"] %>
-  
+  <%# <p>Article <%= article["num"] %></p><br>
+  <%= chapter["title"] %><br>
 <% end %>
+
+<% @chapters[0]["articles"].each do |article| %>
+  <% if article["num"].count = 1 %> <%# -> .count non reconnu : undifined_method
+      <%= article["num"] %>
+    <% else article["etat"] == "VIGUEUR_ETEN" %>
+      <%= article["num"] %>
+  <% end %>
+<% end %>
+
+<%#  <% @num_articles = chapter["articles"] %>
+<%#    <% @num_articles.each do |article| %>
+<%#      <% if @num_articles.count = 1 %>
+<%#         <%= article["num"] %>
+<%#        <% elsif @num_articles.size > 1 && article["etat"] == "VIGUEUR_ETEN" %>
+<%#          <%= article["num"] %>
+<%#        <% end %>
+<%#    <% end %>
+<%#<% end %>
