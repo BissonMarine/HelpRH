@@ -50,13 +50,12 @@ class PagesController < ApplicationController
     # Token en dur (valable 1h : bearer) =
     'Authorization': "Bearer #{@session_token}"
   }
-
   end
 
   # Clé / valeur recherchée : IDCC 44 par exemple
   def body_api
     # { "ancienId": "MCN97020008A" }
-    { "id": "44" }
+    { "id": params[:IDCC] }
   end
 
   def body_token
