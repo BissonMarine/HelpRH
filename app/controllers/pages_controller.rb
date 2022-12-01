@@ -25,7 +25,7 @@ class PagesController < ApplicationController
     @path_title = response["sections"][0]["sections"][0]["sections"][0]["articles"][0]['pathTitle']
     @content = response["sections"][0]["sections"][0]["sections"][0]["articles"][0]['content']
     @article_num = "Article #{response['sections'][0]['sections'][0]['sections'][0]['articles'][0]['num']}"
-    @content = response['sections'][0]['sections'][0]['sections'][0]['articles'][0]['content']
+    @subcontent = response['sections'][0]['sections'][0]['sections'][0]['articles'][0]['content']
   end
 
   private
@@ -34,6 +34,7 @@ class PagesController < ApplicationController
     url_token = "https://sandbox-oauth.piste.gouv.fr/api/oauth/token"
     oauth_response = HTTParty.post(url_token, headers: headers_token, body: body_token)
     oauth_response.parsed_response["access_token"]
+    # raise
   end
 
 # attention: pour activer le cache, lancer "rails dev:cache" dans le terminal
