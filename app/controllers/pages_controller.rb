@@ -18,14 +18,16 @@ class PagesController < ApplicationController
     # @response = response
     @ccn_name = response["titre"]
     @idcc = response["numeroTexte"]
-    @sections = response["sections"]
+    # @sections = response["sections"] -> ne renvoie rien
     @vigueur = response["sections"][0]["sections"][0]["etat"]
     @clause = response["sections"][0]["sections"][0]["title"]
-    @articles = response["sections"][0]["sections"][0]["sections"][0]["articles"][0]
+    # @articles = response["sections"][0]["sections"][0]["sections"][0]["articles"][0] -> ne renvoie rien ?
     @path_title = response["sections"][0]["sections"][0]["sections"][0]["articles"][0]['pathTitle']
     @content = response["sections"][0]["sections"][0]["sections"][0]["articles"][0]['content']
     @article_num = "Article #{response['sections'][0]['sections'][0]['sections'][0]['articles'][0]['num']}"
-    @subcontent = response['sections'][0]['sections'][0]['sections'][0]['articles'][0]['content']
+    @articles = response['sections'][0]['sections'][0]['sections'][0]['articles']
+
+    @chapters = response["sections"][0]["sections"][0]["sections"]
   end
 
   private
