@@ -1,15 +1,30 @@
 <h1>Authorization Page / Display Page</h1>
 
-<%# <%= @token %>
-<%= @ccn_name %>
-<%= @idcc %>
-<%# <%= @sections[0].keys %>
-<%# <%= @sections[0]["sections"][0].keys%>
-<%= @vigueur%>
-<%= @title%>
-<%= @clause %>
+<p><%= @ccn_name %> - <%= @idcc %></p><br>
+
+<%#<%= @vigueur%>
+<%#<%= @title%>
+<%#<%= @clause %>
 <%# <%= @articles.keys %>
-<%= @path_title %>
-<%= @content %>
-<%= @article_num %>
-<%= @content %>
+<%#<%= @path_title %>
+<%#<%= @content %>
+<%#<%= @article_num %>
+
+
+<br>
+<%# => méthode qui récupère tous les articles du CHAPITRE  %>
+<%# => @path_title[1] : méthode qui récupère le NOM du CHAPITRE  %>
+<%= @path_title[1] %><br>
+<% @articles.each do |article| %>
+  <p>Article <%= article["num"] %></p><br>
+  <%= article["content"] %>
+<% end %>
+
+
+<p>################################################################</p>
+
+<% @chapters.each do |chapter| %>
+  <%# <p>Article <%= article["num"] %></p><br> %>
+  <%= chapter["title"] %>
+  
+<% end %>
