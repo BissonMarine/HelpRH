@@ -16,7 +16,7 @@
         <%# PARTIE À DROITE %>
         <div class="container">
           <div class="instruction">
-            <p>Vous devez remplir le formulaire pour définir ce qui te corresponds le mieux !</p>
+            <p>Remplissez le formulaire pour nous aider à trouver votre texte  !</p>
           </div>
           <div class="input-style">
             <%= form_with url: result_path, method: :get do |f| %>
@@ -62,14 +62,11 @@
                 placeholder: "Votre statut",
                 required: false
               %>
+            <%= f.submit "Rechercher", class: 'btn-maj'%>
             <% end %>
-          </div>
-          <div class="btn-maj">
-            <%= submit_tag "Rechercher" %>
           </div>
         </div>
       </div>
     </div>
   </body>
 </html>
-
