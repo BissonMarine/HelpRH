@@ -1,5 +1,5 @@
 
-<%= form_with url: result_path, method: :get do |f| %>
+<%= form_with url: '/result#main-subject-chapter', method: :get do |f| %>
   <%= f.hidden_field :main_subject, value: params[:main_subject] %>
 
   <%= f.label :IDCC, "Convention collective" %>
@@ -43,5 +43,5 @@
     required: false
   %>
 
-  <%= submit_tag "Rechercher" %>
+  <%= f.submit "Rechercher", anchor: 'main-subject-chapter' %>
 <% end %>
