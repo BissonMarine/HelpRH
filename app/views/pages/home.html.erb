@@ -1,11 +1,11 @@
-<html class="html-background">
-  <body class="body-background">
+<html>
+  <body>
     <%= render "shared/navbar" %>
     <div class="container">
       <div class="d-flex">
         <%# PARTIE À GAUCHE %>
         <div class="col-7 d-flex flex-column align-items-center justify-content-center">
-          <h1>Help RH</h1>
+          <h1 class="title-app">Help RH</h1>
           <div class="col-7">
             <p>
               <strong>
@@ -22,7 +22,7 @@
           <%# PARTIE À DROITE %>
           <%# formulaire de la homepage pour trouver le sujet principal %>
           <h2>Votre recherche</h2>
-          <div>
+          <div class="card-wrapper">
             <div class="input-style">
               <%= form_with url: search_path, method: :get do %>
                 <%= text_field_tag :main_subject,
