@@ -1,47 +1,74 @@
+<html class="html-background">
+  <body class="body-background">
+    <%= render "shared/navbar" %>
+    <div class="container d-flex justify-content-center">
+      <div class="card-white-medium d-flex flex-row">
+        <%# PARTIE À GAUCHE %>
+        <div>
+          <h1>Affinez votre recherche</h1>
+          <div>
+            <h3>Sujet sélectionné</h3>
+            <div class="info-subject">
+              <%= params[:main_subject] %>
+            </div>
+          </div>
+        </div>
+        <%# PARTIE À DROITE %>
+        <div class="container">
+          <div class="instruction">
+            <p>Vous devez remplir le formulaire pour définir ce qui te corresponds le mieux !</p>
+          </div>
+          <div class="input-style">
+            <%= form_with url: result_path, method: :get do |f| %>
+              <%= f.hidden_field :main_subject, value: params[:main_subject] %>
 
-<%= form_with url: result_path, method: :get do |f| %>
-  <%= f.hidden_field :main_subject, value: params[:main_subject] %>
+              <%= f.label :IDCC, "Convention collective" %>
+              <%= f.text_field :IDCC,
+                # onchange: "if (#{:IDCC != "IDCC 44"}){alert('Convention collective non valide');}",
+                placeholder: "IDCC ####",
+                required: true
+              %>
 
-  <%= f.label :IDCC, "Convention collective" %>
-  <%= f.text_field :IDCC,
-    # onchange: "if (#{:IDCC != "IDCC 44"}){alert('Convention collective non valide');}",
-    placeholder: "IDCC ####",
-    required: true
-  %>
+              <%= f.label :contract, "Contrat" %>
+              <%= f.select :contract, ["CDI", "CDD", "Apprentissage", "Contrat de professionnalisation"],
+              placeholder: "Votre type de contrat",
+              required: true
+              %>
 
-  <%= f.label :contract, "Contrat" %>
-  <%= f.select :contract, ["CDI", "CDD", "Apprentissage", "Contrat de professionnalisation"],
-  placeholder: "Votre type de contrat",
-  required: true
-  %>
+              <%= f.label :status, "Statut" %>
+              <%=f.select :status, ["Employé", "Agent de maîtrise", "Cadre"],
+                placeholder: "Votre statut",
+                required: true
+              %>
 
-  <%= f.label :status, "Statut" %>
-  <%=f.select :status, ["Employé", "Agent de maîtrise", "Cadre"],
-    placeholder: "Votre statut",
-    required: true
-  %>
+              <%= f.label :seniority, "Ancienneté" %>
+              <%= f.number_field :seniority,
+                placeholder: "Votre ancienneté",
+                maxlength: 2,
+                min: 0,
+                required: true
+              %>
 
-  <%= f.label :seniority, "Ancienneté" %>
-  <%= f.number_field :seniority,
-    placeholder: "Votre ancienneté",
-    maxlength: 2,
-    min: 0,
-    required: true
-  %>
+              <%= f.label :age, "Âge" %>
+              <%= f.number_field :age,
+                placeholder: "Votre âge",
+                maxlength: 2,
+                min: 0,
+                required: true
+              %>
 
-  <%= f.label :age, "Âge" %>
-  <%= f.number_field :age,
-    placeholder: "Votre âge",
-    maxlength: 2,
-    min: 0,
-    required: true
-  %>
-
-  <%= f.label :protected_salary, "Statut protégé?" %>
-  <%=f.select :protected_salary, ["Pas de statut particulier", "Représentant du personnel", "Femme enceinte", "Salarié mineur"],
-    placeholder: "Votre statut",
-    required: false
-  %>
-
-  <%= submit_tag "Rechercher" %>
-<% end %>
+              <%= f.label :protected_salary, "Statut protégé?" %>
+              <%=f.select :protected_salary, ["Pas de statut particulier", "Représentant du personnel", "Femme enceinte", "Salarié mineur"],
+                placeholder: "Votre statut",
+                required: false
+              %>
+            <% end %>
+          </div>
+          <div class="btn-maj">
+            <%= submit_tag "Rechercher" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

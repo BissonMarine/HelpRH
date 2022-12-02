@@ -1,31 +1,68 @@
-<div class="principal-div-homepage d-flex">
-<%= render "shared/navbar" %>
+<html class="html-background">
+  <body class="body-background">
+    <%= render "shared/navbar" %>
+    <div class="container">
+      <div class="d-flex">
+        <%# PARTIE À GAUCHE %>
+        <div class="col-7 d-flex flex-column align-items-center justify-content-center">
+          <h1>Help RH</h1>
+          <div class="col-7">
+            <p>
+              <strong>
+                Salariés, protégez-vous, et apprenez à faire respecter vos droits !
+              </strong>
+            </p>
+            <p>
+              Help RH vous aide à répondre à votre question et à trouver le texte applicable à votre situation.
+            </p>
+          </div>
+        </div>
 
-<div class="p-3"><h1>Help RH</h1>
+        <div class="card-white-small col-5">
+          <%# PARTIE À DROITE %>
+          <%# formulaire de la homepage pour trouver le sujet principal %>
+          <h2>Votre recherche</h2>
+          <div>
+            <div class="input-style">
+              <%= form_with url: search_path, method: :get do %>
+                <%= text_field_tag :main_subject,
+                  params[:main_subject],
+                  placeholder: "🔍"
+                %>
+              <% end %>
+            </div>
+            <div class="btn-maj">
+              <%= submit_tag "Rechercher" %>
+            </div>
 
-<p>Salariés, protégez-vous, et apprenez à faire respecter vos droits !
-Help RH vous aide à répondre à votre question et à trouver le texte applicable à votre situation.</p>
+          </div>
+          <h3 class="text-center my-3 p-3">OU</h3>
+          <%# Tag pour sujets réccurents %>
+          <h2>Sujets récurrents</h2>
+          <div class="d-flex flex-wrap">
+            <div class="btn-tag">
+              <%= link_to "congés payés", search_path(main_subject: "congés payés") %>
+            </div>
 
-</div>
+            <div class="btn-tag">
+              <%= link_to "heures supplémentaires", search_path(:main_subject => "heures supplémentaires") %>
+            </div>
 
-<div class="p-3">
-<%# formulaire de la homepage pour trouver le sujet principal %>
-<%= form_with url: search_path, method: :get do %>
-  <%= text_field_tag :main_subject,
-    params[:main_subject],
-    placeholder: "sujet de recherche"
-  %>
-  <%= submit_tag "Rechercher" %>
-<% end %>
+            <div class="btn-tag">
+              <%= link_to "fin de contrat", search_path(:main_subject => "fin de contrat") %>
+            </div>
 
-<h2>Sujets récurrents</h2>
+            <div class="btn-tag">
+              <%= link_to "période d'essai", search_path(:main_subject => "période d'essai") %>
+            </div>
 
-<%= link_to "congés payés", search_path(main_subject: "congés payés") %>
-<%= link_to "heures supplémentaires", search_path(:main_subject => "heures supplémentaires") %>
-<%= link_to "fin de contrat", search_path(:main_subject => "fin de contrat") %>
-<%= link_to "période d'essai", search_path(:main_subject => "période d'essai") %>
-<%= link_to "rémunération", search_path(:main_subject => "rémunération") %>
-</div>
-</div>
-
-<%= @relation %>
+            <div class="btn-tag">
+              <%= link_to "rémunération", search_path(:main_subject => "rémunération") %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<%#= @relation %>
