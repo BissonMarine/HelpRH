@@ -22,32 +22,47 @@
 
 
 <p>################################################################</p>
+<div data-controller="resultscroll" >>
+  <% @chapters.each do |chapter| %>
+    <%# <p>Article <%= article["num"] %></p><br>
 
-<% @chapters.each do |chapter| %>
-  <%# <p>Article <%= article["num"] %></p><br>
-
-  <% if chapter["etat"] == "VIGUEUR_ETEN" || chapter["etat"] == "VIGUEUR_NON_ETEN"%>
-    <% if chapter["etat"] %>
-      <%= chapter["title"] %><br>
-      <% @chapter_articles = chapter["articles"]%>
-      <% @chapter_articles.each do |article| %>
-        <% if @chapter_articles.count == 1 %>
-          <p>Article <%= article["num"]%></p><br>
-          <%= article["content"] %>
-        <% elsif @chapter_articles.count > 1 %>
-          <% displayed_article = [] %>
-          <% if article["etat"] == "VIGUEUR_ETEN"%>
+    <% if chapter["etat"] == "VIGUEUR_ETEN" || chapter["etat"] == "VIGUEUR_NON_ETEN"%>
+      <% if chapter["etat"] %>
+        <% if chapter["title"].parameterize.underscore == params[:main_subject].parameterize.underscore %>
+          <p id="main-subject-chapter"><%= chapter["title"] %></p>
+        <% else %>
+          <%= chapter["title"] %>
+        <% end %>
+        <br>
+        <% @chapter_articles = chapter["articles"]%>
+        <% @chapter_articles.each do |article| %>
+          <% if @chapter_articles.count == 1 %>
             <p>Article <%= article["num"]%></p><br>
-            <% displayed_article << article["num"] %>
-            <%= article["content"] %>
-          <% elsif article["etat"] == "VIGUEUR" && displayed_article == nil %>
-            <p>Article <%= article["num"]%></p><br>
-            <% displayed_article << article["num"] %>
+            <%= article["content"].html_safe %>
+          <% elsif @chapter_articles.count > 1 %>
+            <% displayed_article = [] %>
+            <% if article["etat"] == "VIGUEUR_ETEN"%>
+              <p>Article <%= article["num"]%></p><br>
+              <% displayed_article << article["num"] %>
+              <%= article["content"].html_safe %>
+            <% elsif article["etat"] == "VIGUEUR" && displayed_article == nil %>
+              <p>Article <%= article["num"]%></p><br>
+              <% displayed_article << article["num"] %>
+            <% else %>
+            <% end %>
           <% else %>
           <% end %>
+<<<<<<< HEAD
         <% else %>
         <% end %>
       <% end%>
     <%end%>
   <% end %>
 <%end%>
+=======
+        <% end%>
+      <%end%>
+    <% end %>
+  <%end%>
+</div>
+>>>>>>> f72081de9ec08893d29d4d398bedc637fe1b5bde

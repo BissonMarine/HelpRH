@@ -28,6 +28,8 @@ class PagesController < ApplicationController
     # @articles = response['sections'][0]['sections'][0]['sections'][0]['articles']
 
     @chapters = response["sections"][0]["sections"][0]["sections"]
+
+    # redirect_to result_path(anchor: 'main-subject-chapter')
   end
 
   private
