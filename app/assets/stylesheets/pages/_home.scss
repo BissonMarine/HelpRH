@@ -1,11 +1,33 @@
 // Specific CSS for your home-page
-.title-app {
+body {
+  color: #375698;
+}
+
+h2 {
+  font-family: "Comfortaa-bold";
+  color: #88A3DD;
+  font-size: 30px;
+}
+
+.title-app{
   font-family: "Anton";
   font-size: 128px;
   color: white;
-}
+  text-shadow: 4px 4px 4px rgba($color: #D2E2FF, $alpha: 1);
+  }
 
 .card-wrapper {
   padding: 50px;
   text-align: center;
+}
+
+.intro-app {
+  font-family: "Comfortaa-light";
+  font-size: 24px;
+  width: 620px;
+  // padding: 55px;
+
+  .intro-app-bold {
+    font-family: "Comfortaa-bold";
+  }
 }
