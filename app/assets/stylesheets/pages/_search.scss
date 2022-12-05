@@ -1,16 +1,16 @@
-h1 {
-  font-family: 'Comfortaa-light';
-  font-size: 40px;
-  margin-bottom: 25px;
-}
-
-h3 {
-  font-family: 'Comfortaa-light';
-  font-size: 20px;
-}
-
 .search-partie-gauche {
   padding-inline: 30px;
+
+  h1 {
+  font-weight:300;
+    font-size: 40px;
+    margin-bottom: 25px;
+  }
+
+  h3 {
+    font-weight:300;
+    font-size: 20px;
+  }
 }
 
 .info-subject {
