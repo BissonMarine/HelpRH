@@ -17,17 +17,23 @@
           <br>
           <% @chapter_articles = chapter["articles"]%>
           <% @chapter_articles.each do |article| %>
+            <%= article_id = nil  %>
+            <% unless chapter["title"].parameterize.underscore == params[:main_subject].parameterize.underscore %>
+              <% if (article["content"].html_safe.include?(params[:main_subject]))%>
+                <% article_id = "main-subject-chapter" %>
+              <% end %>
+            <% end %>
             <% if @chapter_articles.count == 1 %>
-              <p>Article <%= article["num"]%></p><br>
+              <p id=<%=article_id%>>Article <%= article["num"]%></p><br>
               <%= article["content"].html_safe %>
             <% elsif @chapter_articles.count > 1 %>
               <% displayed_article = [] %>
               <% if article["etat"] == "VIGUEUR_ETEN"%>
-                <p>Article <%= article["num"]%></p><br>
+                <p id=<%=article_id%>>Article <%= article["num"]%></p><br>
                 <% displayed_article << article["num"] %>
                 <%= highlight(article["content"].html_safe, ["ancienneté", "contrat", "statut", " ans"]) %>
               <% elsif article["etat"] == "VIGUEUR" && displayed_article == nil %>
-                <p>Article <%= article["num"]%></p><br>
+                <p id=<%=article_id%>>Article <%= article["num"]%></p><br>
                 <% displayed_article << article["num"] %>
               <% else %>
               <% end %>
