@@ -7,22 +7,24 @@
   padding: 5px 10px;
   margin: 5px;
   border: 1px solid transparent;
-  &:hover {
-    color: #88A3DD;
-    background-color: white;
-    transition: 0.3s;
-    border: 1px solid #88A3DD;
-  }
 
   a {
     text-decoration: none;
     color: white;
-    &:hover {
-      color: #88A3DD;
-      background-color: white;
-    }
   }
 
+}
+
+.btn-tag:hover {
+  color: #88A3DD;
+  background-color: white;
+  transition: 0.5s;
+  border: 1px solid #88A3DD;
+  a {
+    color: #88A3DD;
+    background-color: white;
+    transition: 0.5s;
+  }
 }
 
 .btn-maj input {
@@ -32,37 +34,16 @@
   border-radius: 10px;
   padding: 5px 10px;
   margin: 5px;
-  width: 40% !important;
-  &:hover {
-    color: #88A3DD;
-    background-color: white;
-    transition: 0.3s;
-    border: 1px solid #88A3DD;
-  }
-
-  input  {
-    text-decoration: none;
-    color: white;
-  }
-}
-
-.btn-maj {
-  display: inline-block;
-  background-color: #88A3DD;
-  color: white;
+  width: 100%;
+  text-decoration: none;
   border: 1px solid transparent;
-  border-radius: 10px;
-  padding: 5px 10px;
-  margin: 5px;
-  width: 30px;
+  font-family: $font;
+  font-weight: 700;
+  text-transform: uppercase;
   &:hover {
     color: #88A3DD;
     background-color: white;
     transition: 0.3s;
     border: 1px solid #88A3DD;
-    text-decoration: none;
-    font-family: $font;
-    font-weight: 700;
-    text-transform: uppercase;
   }
 }

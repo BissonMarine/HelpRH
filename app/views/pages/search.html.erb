@@ -62,7 +62,7 @@
           %>
 
           <div class="d-flex justify-content-center" data-controller="spinner">
-            <div data-spinner-target="submit">
+            <div data-spinner-target="submit" class="btn-maj">
               <%= f.submit "Rechercher", class:"btn-maj", data: { action: "click->spinner#spinShow"} %>
             </div>
             <div data-spinner-target="circle" class="hidden">
