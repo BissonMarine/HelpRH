@@ -62,7 +62,7 @@
                 placeholder: "Votre statut",
                 required: false
               %>
-              <div data-controller="spinner">
+              <div class="d-flex justify-content-center" data-controller="spinner">
                 <div data-spinner-target="submit">
                   <%= f.submit "Rechercher", class:"btn-maj", data: { action: "click->spinner#spinShow"} %>
                 </div>
