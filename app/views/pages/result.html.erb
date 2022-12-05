@@ -1,17 +1,17 @@
 
 <div class= "card-white-result ">
-  <h1><%= @ccn_name %></h1><br>
+  <h1 class= "text-align-center d-flex"><%= @ccn_name %></h1><br>
 
-  <div data-controller="resultscroll" >>
+  <div data-controller="resultscroll" >
     <% @chapters.each do |chapter| %>
       <%# <p>Article <%= article["num"] %></p><br>
 
       <% if chapter["etat"] == "VIGUEUR_ETEN" || chapter["etat"] == "VIGUEUR_NON_ETEN"%>
         <% if chapter["etat"] %>
           <% if chapter["title"].parameterize.underscore == params[:main_subject].parameterize.underscore %>
-            <p id="main-subject-chapter"><%= chapter["title"] %></p>
+            <h2 id="main-subject-chapter"><%= chapter["title"] %></h2>
           <% else %>
-            <%= chapter["title"] %>
+            <h2><%= chapter["title"] %></h2>
           <% end %>
           <br>
           <% @chapter_articles = chapter["articles"]%>
