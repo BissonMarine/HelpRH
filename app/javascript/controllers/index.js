@@ -10,4 +10,5 @@ application.register("hello", HelloController)
 import ResultscrollController from "./resultscroll_controller"
 application.register("resultscroll", ResultscrollController)
 
-
+import SpinnerController from "./spinner_controller"
+application.register("spinner", SpinnerController)

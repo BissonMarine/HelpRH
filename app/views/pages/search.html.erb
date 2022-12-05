@@ -62,8 +62,13 @@
                 placeholder: "Votre statut",
                 required: false
               %>
-              <div class="btn-maj">
-                <%= f.submit "Rechercher"%>
+              <div data-controller="spinner">
+                <div data-spinner-target="submit">
+                  <%= f.submit "Rechercher", class:"btn-maj", data: { action: "click->spinner#spinShow"} %>
+                </div>
+                <div data-spinner-target="circle" class="hidden">
+                  <%= image_tag "spinner.gif", :class => "" %>
+                </div>
               </div>
             <% end %>
           </div>
