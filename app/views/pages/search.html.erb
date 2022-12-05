@@ -54,14 +54,20 @@
             min: 0,
             required: true
           %>
-
-          <%= f.label :protected_salary, "Statut protégé?" %>
-          <%=f.select :protected_salary, ["Pas de statut particulier", "Représentant du personnel", "Femme enceinte", "Salarié mineur"],
-            placeholder: "Votre statut",
-            required: false
-          %>
-          <div class="btn-maj text-center">
-            <%= f.submit "Rechercher"%>
+              <%= f.label :protected_salary, "Statut protégé?" %>
+              <%=f.select :protected_salary, ["Pas de statut particulier", "Représentant du personnel", "Femme enceinte", "Salarié mineur"],
+                placeholder: "Votre statut",
+                required: false
+              %>
+              <div class="d-flex justify-content-center" data-controller="spinner">
+                <div data-spinner-target="submit">
+                  <%= f.submit "Rechercher", class:"btn-maj", data: { action: "click->spinner#spinShow"} %>
+                </div>
+                <div data-spinner-target="circle" class="hidden">
+                  <%= image_tag "spinner.gif", :class => "" %>
+                </div>
+              </div>
+            <% end %>
           </div>
         <% end %>
       </div>
