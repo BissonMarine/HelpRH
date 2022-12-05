@@ -1,14 +1,17 @@
 .input-style {
-  // padding: 50px;
 
   input, select {
-    // width: 200px;
     width: 100%;
     display: inline-block;
     border-radius: 10px;
     padding: 5px 10px;
+    color: #88A3DD;
     border: 1px solid rgba($color: #5A86E5, $alpha: 0.4);
     box-shadow: 0px 4px 4px rgba($color: #D0DFFE, $alpha: 0.2);
     margin-bottom: 20px;
+  }
+
+  ::placeholder{
+    color: #88A3DD;
   }
 }
