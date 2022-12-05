@@ -2,13 +2,28 @@
   display: inline-block;
   text-decoration: none;
   background-color: #88A3DD;
+  color: white;
   border-radius: 10px;
   padding: 5px 10px;
   margin: 5px;
+  border: 1px solid transparent;
 
   a {
     text-decoration: none;
     color: white;
+  }
+
+}
+
+.btn-tag:hover {
+  color: #88A3DD;
+  background-color: white;
+  transition: 0.5s;
+  border: 1px solid #88A3DD;
+  a {
+    color: #88A3DD;
+    background-color: white;
+    transition: 0.5s;
   }
 }
 
@@ -19,9 +34,16 @@
   border-radius: 10px;
   padding: 5px 10px;
   margin: 5px;
-  width: 40% !important;
+  width: 100%;
   text-decoration: none;
+  border: 1px solid transparent;
   font-family: $font;
   font-weight: 700;
   text-transform: uppercase;
+  &:hover {
+    color: #88A3DD;
+    background-color: white;
+    transition: 0.3s;
+    border: 1px solid #88A3DD;
+  }
 }
