@@ -20,9 +20,8 @@
   padding: 5px 10px;
   margin: 5px;
   width: 40% !important;
-
-  input  {
-    text-decoration: none;
-    color: white;
-  }
+  text-decoration: none;
+  font-family: $font;
+  font-weight: 700;
+  text-transform: uppercase;
 }
