@@ -26,7 +26,8 @@
             <%= text_field_tag :main_subject,
               params[:main_subject],
               placeholder: raw("&#x1F50E"),
-              style: "font-family: 'Comfortaa'"
+              style: "font-family: 'Comfortaa'",
+              required: true
             %>
             <div class="btn-maj">
               <%= submit_tag "Rechercher"%>
