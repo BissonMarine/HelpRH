@@ -1,6 +1,6 @@
 .navbar-brand {
   color: #375698;
-  font-family: "Comfortaa-bold";
+  font-family: $font;
   font-size: 30px;
   text-shadow: 1px 1px 0px rgb(55, 86, 152);
 
@@ -25,5 +25,5 @@
 
 .nav-item a {
   color: #375698;
-  font-family: "Comfortaa-bold";
+  font-family: $font;
 }

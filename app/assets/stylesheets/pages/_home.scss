@@ -4,7 +4,7 @@ body {
 }
 
 h2 {
-  font-family: 'Comfortaa', cursive;
+  font-family: $font;
   color: #88A3DD;
   font-size: 30px;
 }
@@ -32,13 +32,15 @@ h2 {
 }
 
 .intro-app {
-  font-family: "Comfortaa-light";
+  font-family: $font;
+  font-weight: 100;
   font-size: 24px;
   width: 620px;
   // padding: 55px;
 
   .intro-app-bold {
-    font-family: "Comfortaa-bold";
+    font-family: $font;
+    font-weight: 900;
   }
 }
 
