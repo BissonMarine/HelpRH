@@ -10,5 +10,4 @@ application.register("hello", HelloController)
 import ResultscrollController from "./resultscroll_controller"
 application.register("resultscroll", ResultscrollController)
 
-import ScrollController from "./scroll_controller"
-application.register("scroll", ScrollController)
+
