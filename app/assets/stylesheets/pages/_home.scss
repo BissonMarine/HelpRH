@@ -11,8 +11,9 @@ h2 {
 
 .screen-wrapper {
   height: 100%;
-  align-items: center;
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding-block: 40px;
 }
 
