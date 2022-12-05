@@ -60,10 +60,9 @@
     background-color: white;
     transition: 0.3s;
     border: 1px solid #88A3DD;
-  }
-
-  input  {
     text-decoration: none;
-    color: white;
+    font-family: $font;
+    font-weight: 700;
+    text-transform: uppercase;
   }
 }
