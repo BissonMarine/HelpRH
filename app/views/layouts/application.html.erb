@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="html-background">
+<html>
   <head>
     <title>HelpRH</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,12 +13,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   </head>
 
-  <body class="body-background m-4">
-  <div>
-  <%# <%= render "shared/navbar" %>
-  <%= render "shared/flashes" %>
+  <body class="html-background">
+    <div class="body-background">
+      <%# <%= render "shared/navbar" %>
+      <%= render "shared/flashes" %>
 
-    <%= yield %>
-  </div>
+      <%= yield %>
+    </div>
   </body>
 </html>
