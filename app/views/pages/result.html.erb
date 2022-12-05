@@ -10,8 +10,7 @@
       <% if chapter["etat"] == "VIGUEUR_ETEN" || chapter["etat"] == "VIGUEUR_NON_ETEN"%>
         <% if chapter["etat"] %>
           <% if chapter["title"].parameterize.underscore == params[:main_subject].parameterize.underscore %>
-            <p id="main-subject-chapter"><%= highlight(chapter["title"], params[:main_subject]) %></p>
-
+            <h2 id="main-subject-chapter"><%= highlight(chapter["title"], params[:main_subject]) %></h2>
           <% else %>
             <h2><%= chapter["title"] %></h2>
           <% end %>
@@ -26,7 +25,7 @@
               <% if article["etat"] == "VIGUEUR_ETEN"%>
                 <p>Article <%= article["num"]%></p><br>
                 <% displayed_article << article["num"] %>
-                <%= highlight(article["content"].html_safe, ["ancienneté", "contrat", "statut", "ans"]) %>
+                <%= highlight(article["content"].html_safe, ["ancienneté", "contrat", "statut", " ans"]) %>
               <% elsif article["etat"] == "VIGUEUR" && displayed_article == nil %>
                 <p>Article <%= article["num"]%></p><br>
                 <% displayed_article << article["num"] %>
