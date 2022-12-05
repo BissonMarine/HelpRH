@@ -1,32 +1,28 @@
 .btn-tag {
+  display: inline-block;
   text-decoration: none;
   background-color: #88A3DD;
   border-radius: 10px;
   padding: 5px 10px;
   margin: 5px;
-  width: 220px;
 
   a {
     text-decoration: none;
     color: white;
   }
-  ul {
-    text-decoration: none;
-  }
 }
 
-.btn-maj {
+.btn-maj input {
+  display: inline-block;
   background-color: #88A3DD;
+  color: white;
   border-radius: 10px;
   padding: 5px 10px;
   margin: 5px;
-  display: inline-block;
+  width: 40% !important;
 
-  input {
+  input  {
     text-decoration: none;
     color: white;
-    background-color: transparent;
-    border: none;
-    text-transform: uppercase;
   }
 }

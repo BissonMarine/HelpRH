@@ -4,9 +4,17 @@ body {
 }
 
 h2 {
-  font-family: "Comfortaa-bold";
+  font-family: $font;
   color: #88A3DD;
   font-size: 30px;
+}
+
+.screen-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 40px;
 }
 
 .title-app{
@@ -14,20 +22,38 @@ h2 {
   font-size: 128px;
   color: white;
   text-shadow: 4px 4px 4px rgba($color: #D2E2FF, $alpha: 1);
-  }
+  margin-bottom: 50px;
+}
+
 
 .card-wrapper {
-  padding: 50px;
+  padding: 30px;
   text-align: center;
 }
 
 .intro-app {
-  font-family: "Comfortaa-light";
+  font-family: $font;
+  font-weight: 100;
   font-size: 24px;
   width: 620px;
   // padding: 55px;
 
   .intro-app-bold {
-    font-family: "Comfortaa-bold";
+    font-family: $font;
+    font-weight: 900;
   }
+}
+
+.card-white-small {
+  color: #88A3DD;
+}
+
+.else-cpm:before,
+.else-cpm:after {
+  content: "";
+  width: 100px;
+  border-bottom: 1px solid rgba($color: #5A86E5, $alpha: 0.2);
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-inline: 10px;
 }

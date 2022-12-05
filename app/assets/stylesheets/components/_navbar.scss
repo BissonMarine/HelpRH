@@ -1,8 +1,18 @@
+.navbar-brand {
+  color: #375698;
+  font-family: $font;
+  font-size: 30px;
+  text-shadow: 1px 1px 0px rgb(55, 86, 152);
+
+  &:hover {
+    color: #375698 !important;
+  }
+}
+
 .navbar-helprh {
   justify-content: space-between;
   background: transparent;
   border-radius: 20px;
-
 }
 
 .navbar-helprh .navbar-collapse {
@@ -11,4 +21,9 @@
 
 .navbar-helprh .navbar-brand img {
   width: 40px;
+}
+
+.nav-item a {
+  color: #375698;
+  font-family: $font;
 }
