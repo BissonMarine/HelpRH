@@ -21,7 +21,7 @@
               <%= article_id = nil  %>
               <% unless chapter["title"].parameterize.underscore == params[:main_subject].parameterize.underscore %>
                 <% if (article["content"].html_safe.include?(params[:main_subject]))%>
-                  <% article_id = "main-subject-chapter" %>
+                  <% article_id = "main-subject-article" %>
                 <% end %>
               <% end %>
               <% if @chapter_articles.count == 1 %>
