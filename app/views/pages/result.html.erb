@@ -5,11 +5,12 @@
   <div data-controller="resultscroll" >>
     <% @chapters.each do |chapter| %>
       <%# <p>Article <%= article["num"] %></p><br>
+      <%# <% highlight(content.body, @search_keywords.split) -%>
 
       <% if chapter["etat"] == "VIGUEUR_ETEN" || chapter["etat"] == "VIGUEUR_NON_ETEN"%>
         <% if chapter["etat"] %>
           <% if chapter["title"].parameterize.underscore == params[:main_subject].parameterize.underscore %>
-            <p id="main-subject-chapter"><%= chapter["title"] %></p>
+            <p id="main-subject-chapter"><%= highlight(chapter["title"], params[:main_subject]) %></p>
           <% else %>
             <%= chapter["title"] %>
           <% end %>
@@ -24,7 +25,7 @@
               <% if article["etat"] == "VIGUEUR_ETEN"%>
                 <p>Article <%= article["num"]%></p><br>
                 <% displayed_article << article["num"] %>
-                <%= article["content"].html_safe %>
+                <%= highlight(article["content"].html_safe, ["ancienneté", "contrat", "statut", "ans"]) %>
               <% elsif article["etat"] == "VIGUEUR" && displayed_article == nil %>
                 <p>Article <%= article["num"]%></p><br>
                 <% displayed_article << article["num"] %>
