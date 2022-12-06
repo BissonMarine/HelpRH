@@ -21,7 +21,54 @@ class PagesController < ApplicationController
     @highlighted_words = ["ancienneté", "contrat", params[:status], " ans", params[:main_subject]]
     @ccn_name = response["titre"]
     @idcc = response["numeroTexte"]
-    @chapters = response["sections"][0]["sections"][0]["sections"]
+
+    @chapters = []
+    # byebug
+    if response.key?("sections")
+      response["sections"].each do |section|
+        # first level iteration over the many possible section
+
+        if section.key?("articles") && !section["articles"].blank?
+          @chapters << section
+        end
+
+        if section.key?("sections")
+          section["sections"].each do |sub_section|
+            if sub_section.key?("articles") && !sub_section["articles"].blank?
+              @chapters << sub_section
+            end
+
+            if sub_section.key?("sections")
+              sub_section["sections"].each do |sub_sub_section|
+                if sub_sub_section.key?("articles") && !sub_sub_section["articles"].blank?
+                  @chapters << sub_sub_section
+                end
+
+                if sub_sub_section.key?("sections")
+                  sub_sub_section["sections"].each do |sub_sub_sub_section|
+                    if sub_sub_sub_section.key?("articles") && !sub_sub_sub_section["articles"].blank?
+                      @chapters << sub_sub_sub_section
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+
+    # if response["sections"][0].key?("articles") && !response["sections"][0]["articles"].blank?
+    #   @chapters = response["sections"]
+    # end
+    # if response["sections"][0]["sections"][0].key?("articles") && !response["sections"][0]["sections"][0]["articles"].blank?
+    #   @chapters = response["sections"][0]["sections"] + @chapters
+    # end
+    # if response["sections"][0]["sections"][0]["sections"][0].key?("articles") && !response["sections"][0]["sections"][0]["sections"][0]["articles"].blank?
+    #   @chapters = response["sections"][0]["sections"][0]["sections"] + @chapters
+    # end
+
+    @chapters.compact_blank
   end
 
   private
