@@ -6,12 +6,10 @@
 
     <div data-controller="resultscroll" >
       <% @chapters.each do |chapter| %>
-        <%# <p>Article <%= article["num"] %></p><br>
-        <%# <% highlight(content.body, @search_keywords.split) -%>
         <% if chapter["etat"] == "VIGUEUR_ETEN" || chapter["etat"] == "VIGUEUR_NON_ETEN"%>
           <% if chapter["etat"] %>
             <% if chapter["title"].parameterize.underscore == params[:main_subject].parameterize.underscore %>
-              <h2 id="main-subject-chapter"><%= highlight(chapter["title"], params[:main_subject]) %></h2>
+              <h2 id="main-subject-chapter"><%= highlight(chapter["title"], @highlighted_words) %></h2>
             <% else %>
               <h2><%= chapter["title"] %></h2>
             <% end %>
@@ -26,13 +24,13 @@
               <% end %>
               <% if @chapter_articles.count == 1 %>
                 <p id=<%=article_id%>>Article <%= article["num"]%></p><br>
-                <%= article["content"].html_safe %>
+                <%= highlight(article["content"].html_safe, @highlighted_words ) %>
               <% elsif @chapter_articles.count > 1 %>
                 <% displayed_article = [] %>
                 <% if article["etat"] == "VIGUEUR_ETEN"%>
                   <p id=<%=article_id%>>Article <%= article["num"]%></p><br>
                   <% displayed_article << article["num"] %>
-                  <%= highlight(article["content"].html_safe, ["ancienneté", "contrat", "statut", " ans"]) %>
+                  <%= highlight(article["content"].html_safe, @highlighted_words) %>
                 <% elsif article["etat"] == "VIGUEUR" && displayed_article == nil %>
                   <p id=<%=article_id%>>Article <%= article["num"]%></p><br>
                   <% displayed_article << article["num"] %>
