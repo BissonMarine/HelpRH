@@ -12,3 +12,6 @@ application.register("resultscroll", ResultscrollController)
 
 import SpinnerController from "./spinner_controller"
 application.register("spinner", SpinnerController)
+
+import SelectController from "./select_controller"
+application.register("select", SelectController)
