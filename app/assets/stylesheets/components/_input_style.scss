@@ -1,6 +1,6 @@
-#IDCC, #contract, #status,
+#idcc, #contract, #status,
 #seniority, #age, #protected_salary,
-#main_subject {
+#main_subject, .dropdown {
   width: 100%;
   display: inline-block;
   border-radius: 10px;
@@ -13,4 +13,8 @@
   ::placeholder{
     color: #88A3DD;
   }
+}
+
+.ts-control {
+  border: 0px solid transparent;
 }

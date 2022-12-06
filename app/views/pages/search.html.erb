@@ -20,11 +20,9 @@
         <%= form_with url: result_path, method: :get do |f| %>
           <%= f.hidden_field :main_subject, value: params[:main_subject] %>
 
-          <%= f.label :IDCC, "Convention collective" %>
-          <%= f.text_field :IDCC,
-            # onchange: "if (#{:IDCC != "IDCC 44"}){alert('Convention collective non valide');}",
-            placeholder: "IDCC ####",
-            required: true
+          <%# DROPDOWN WITH TOMSELECT TO FILTER %>
+          <%= f.label :idcc, "Convention Collective" %>
+          <%= f.select :idcc, ::Conv::CCN_NAMES_AND_IDCC, {}, data: {controller: "select" }, class:"dropdown", placeholder: "Saisissez votre numéro IDCC ou le nom de votre convention"
           %>
 
           <%= f.label :contract, "Contrat" %>
@@ -69,7 +67,6 @@
               <%= image_tag "spinner.gif", :class => "" %>
             </div>
           </div>
-
         <% end %>
       </div>
     </div>
