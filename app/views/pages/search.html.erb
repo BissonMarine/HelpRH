@@ -22,7 +22,7 @@
 
           <%# DROPDOWN WITH TOMSELECT TO FILTER %>
           <%= f.label :idcc, "Convention Collective" %>
-          <%= f.select :idcc, ::Conv::CCN_NAMES_AND_IDCC, {}, data: {controller: "select" }
+          <%= f.select :idcc, ::Conv::CCN_NAMES_AND_IDCC, {}, data: {controller: "select" }, class:"dropdown", placeholder: "Saisissez votre numéro IDCC ou le nom de votre convention"
           %>
 
           <%= f.label :contract, "Contrat" %>
@@ -67,7 +67,6 @@
               <%= image_tag "spinner.gif", :class => "" %>
             </div>
           </div>
-
         <% end %>
       </div>
     </div>
