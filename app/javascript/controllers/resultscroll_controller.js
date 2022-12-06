@@ -4,7 +4,12 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   connect() {
     setTimeout(() => {
-      document.getElementById('main-subject-chapter').scrollIntoView();
+      if(document.getElementById('main-subject-chapter')){
+        document.getElementById('main-subject-chapter').scrollIntoView();
+      }
+      else {
+        document.getElementById('main-subject-article').scrollIntoView();
+      }
     }, "500")
   }
 }
