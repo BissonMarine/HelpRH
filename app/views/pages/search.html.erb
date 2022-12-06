@@ -20,12 +20,27 @@
         <%= form_with url: result_path, method: :get do |f| %>
           <%= f.hidden_field :main_subject, value: params[:main_subject] %>
 
-          <%= f.label :IDCC, "Convention collective" %>
-          <%= f.text_field :IDCC,
+          <%# CODE AVANT TEST DROPDOWN %>
+          <%#= f.label :IDCC, "Convention collective" %>
+          <%#= f.text_field :IDCC,
             # onchange: "if (#{:IDCC != "IDCC 44"}){alert('Convention collective non valide');}",
-            placeholder: "IDCC ####",
+            placeholder: "Numéro IDCC ou nom de votre convention",
             required: true
           %>
+
+          <%# DROPDOWN WITH SEARCH TO FILTER%>
+          <div class="dropdown"  data-dropdowns-target="keyup">
+          <%= f.label :idcc, "Convention Collective" %>
+          <%= f.select :idcc, class:"dropbtn", data-controller="dropdowns" placeholder: "Numéro IDCC ou nom de votre convention", required: true %>
+            <button data-action="keyup->dropdowns#show" class="dropbtn"></button>
+            <div data-dropdowns-target="div" class="dropdown-content">
+              <input type="text" placeholder="Numéro IDCC ou nom de votre convention" class="display" data-dropdowns-target="keyup" data-action="keyup->dropdowns#filter">
+                <a href="#">CCN de la Chimie</a>
+                <a href="#">CCN Syntec et bureaux d'études</a>
+                <a href="#">CCN des entreprises de propreté</a>
+            </div>
+          </div>
+
 
           <%= f.label :contract, "Contrat" %>
           <%= f.select :contract, ["CDI", "CDD", "Apprentissage", "Contrat de professionnalisation"],
