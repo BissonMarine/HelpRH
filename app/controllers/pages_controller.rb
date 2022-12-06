@@ -15,7 +15,13 @@ class PagesController < ApplicationController
     @highlighted_words = ["ancienneté", "contrat", params[:status], " ans", params[:main_subject]]
     @ccn_name = response["titre"]
     @idcc = response["numeroTexte"]
-    @chapters = response["sections"][0]["sections"][0]["sections"]
+    if response["sections"][0].key?("articles")
+      @chapters = response["sections"]
+    elsif response["sections"][0]["sections"][0].key?("articles")
+      @chapters = response["sections"][0]["sections"]
+    elsif response["sections"][0]["sections"][0]["sections"][0].key?("articles")
+      @chapters = response["sections"][0]["sections"][0]["sections"]
+    end
   end
 
   private
