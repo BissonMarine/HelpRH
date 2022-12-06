@@ -1,10 +1,40 @@
 <%= render "shared/navbar" %>
 <div class="container screen-wrapper">
-  <div class= "card-white-result ">
+  <div class= "card-white-result d-flex">
+    <%# arborescence de bootstrap %>
+    <div class="arborescence">
+      <strong class="d-none d-md-block h6 my-2"><%= @ccn_name %></strong>
+      <hr class="d-none d-md-block my-2">
+      <%# <div class="collapse bd-toc-collapse" id="tocContents"> %>
+      <div class="detail-arborescence">
+        <nav>
+          <ul>
+            <li class="menu-deroulant"><a>Clause</a>
+              <ul>
+                <li class="sous-menu"><a>Titre 1</a>
+                  <ul>
+                    <li><a>Art.9</a></li>
+                    <li><a>Art.10</a></li>
+                    <li><a>Art.11</a></li>
+                  </ul>
+                </li>
+                <li class="sous-menu"><a>Titre 2</a>
+                  <ul>
+                    <li><a>Art.12</a></li>
+                    <li><a>Art.13</a></li>
+                    <li><a>Art.14</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <%# -------------- %>
+
+    <div class="article-result" data-controller="resultscroll" >
     <h1 class= "text-align-center d-flex"><%= @ccn_name %></h1><br>
-
-
-    <div data-controller="resultscroll" >
       <% @chapters.each do |chapter| %>
         <%# <p>Article <%= article["num"] %></p><br>
         <%# <% highlight(content.body, @search_keywords.split) -%>
