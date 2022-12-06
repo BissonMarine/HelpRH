@@ -18,20 +18,10 @@ class PagesController < ApplicationController
     # @headers_api = headers_api
     # @title = response["titre"]
     # @response = response
+    @highlighted_words = ["ancienneté", "contrat", params[:status], " ans", params[:main_subject]]
     @ccn_name = response["titre"]
     @idcc = response["numeroTexte"]
-    # @sections = response["sections"] -> ne renvoie rien
-    # @vigueur = response["sections"][0]["sections"][0]["etat"]
-    # @clause = response["sections"][0]["sections"][0]["title"]
-    # # @articles = response["sections"][0]["sections"][0]["sections"][0]["articles"][0] -> ne renvoie rien ?
-    # @path_title = response["sections"][0]["sections"][0]["sections"][0]["articles"][0]['pathTitle']
-    # @content = response["sections"][0]["sections"][0]["sections"][0]["articles"][0]['content']
-    # @article_num = "Article #{response['sections'][0]['sections'][0]['sections'][0]['articles'][0]['num']}"
-    # @articles = response['sections'][0]['sections'][0]['sections'][0]['articles']
-
     @chapters = response["sections"][0]["sections"][0]["sections"]
-
-    # redirect_to result_path(anchor: 'main-subject-chapter')
   end
 
   private
