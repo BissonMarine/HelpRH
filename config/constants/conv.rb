@@ -1,4 +1,36 @@
 module Conv
+  CCN_NAMES_AND_IDCC = {
+    "" => "",
+
+    "CCN de la Chimie (IDCC 44)" => "44",
+
+    "CCN des entreprises de propreté (IDCC 3043)" => "3043",
+
+    "CCN Syntec et bureaux d'études (IDCC 1486)" => "1486",
+
+    "CCN de la banque (IDCC 2120)" => "2120",
+
+    "CCN des bâtiments ouvriers (+10 salariés) (IDCC 1597)" => "1597",
+
+    "CCN Commerce de gros (IDCC 573)" => "573",
+
+    "CCN Commerce détail et gros alimentaire" => "2216",
+
+    "CCN des services de l'automobile" => "1090",
+
+    "CCN Hôtellerie, Cafés et Restauration" => "1979",
+
+    "CCN des transports routiers" => "16",
+
+    "CCN Hospitalisation à but non lucratif" => "29",
+
+    "CCN Établissements pour personnes inadaptées" => "413",
+
+    "CCN Hospitalisation privée" => "2264",
+
+    "CCN Aide accompagnement et soins et services à domicile" => "2941"
+  }
+
   CONVENTIONS_ID = {
     ## 14 plus grosses CCN (en effectif salarié)
     # Chimie
@@ -29,9 +61,5 @@ module Conv
     "KALICONT000005635813" => "2264",
     # Aide accompagnement et soins et services à domicile
     "KALICONT000025805800" => "2941"
-  }
-
-  IDCC_NAME = {
-    "0044" => "CCN de la Chimie"
   }
 end

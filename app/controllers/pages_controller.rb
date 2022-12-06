@@ -11,10 +11,12 @@ class PagesController < ApplicationController
   def result
     @token = get_token
     url_api = "https://sandbox-api.piste.gouv.fr/dila/legifrance-beta/lf-engine-app/consult/kaliContIdcc"
+    # byebug
     response = HTTParty.post(url_api, headers: headers_api, body: body_api.to_json)
+
+    ## ARBORESCENCE QUERY (IDCC 44) =
     # @headers_api = headers_api
     # @title = response["titre"]
-    # byebug
     # @response = response
     @ccn_name = response["titre"]
     @idcc = response["numeroTexte"]
@@ -57,7 +59,7 @@ class PagesController < ApplicationController
   # Clé / valeur recherchée : IDCC 44 par exemple
   def body_api
     # { "ancienId": "MCN97020008A" }
-    { "id": params[:IDCC] }
+    { "id": params[:idcc] }
   end
 
   def body_token
