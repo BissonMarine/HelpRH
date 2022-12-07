@@ -14,16 +14,26 @@
     <%# PARTIE À DROITE %>
     <div class="container col-6">
       <div class="instruction">
-        <p>Remplissez le formulaire pour nous aider à trouver votre texte  !</p>
+        <p class="text-align-center">Nous avons quelques questions complémentaires pour trouver le texte correspondant à votre situation !</p>
       </div>
       <div class="input-style d-flex justify-content-center">
         <%= form_with url: result_path, method: :get do |f| %>
           <%= f.hidden_field :main_subject, value: params[:main_subject] %>
 
           <%# DROPDOWN WITH TOMSELECT TO FILTER %>
-          <%= f.label :idcc, "Convention Collective" %>
+          <%# <%= f.label :idcc, "Convention Collective" %>
+          <%#= f.select :idcc, ::Conv::CCN_NAMES_AND_IDCC, {}, data: {controller: "select" }, class:"dropdown", placeholder: "Saisissez votre numéro IDCC ou le nom de votre convention"
+          %>
+
+          <%# DROPDOWN WITH TOMSELECT TO FILTER + POPOVER %>
+          <div style="text-align:justify;" class="tooltip-div"><%= f.label :idcc, "Convention Collective" %> <a tabindex="0" class="fa-thin fa-square-question" id="tooltip-picto"
+          data-controller="popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right"
+          data-bs-content="Votre bulletin de paie comporte des mentions obligatoires, notamment le <strong>nom</strong> de votre Convention Collective, son identification <strong>IDCC</strong>, votre code <strong>NAF / APE</strong> ou le <strong>numéro SIRET</strong> de votre entreprise.<br><br>
+          Saisissez dans le champ ci-contre le <strong>nom</strong> ou le <strong>numéro IDCC</strong> de votre convention.<br><br>
+          Sachez que vous pouvez également retrouver le nom ou l'IDCC de votre convention collective en saisissant votre numéro SIRET sur le moteur de recherche présent sur <%= "#{link_to "ce site.", "https://code.travail.gouv.fr/outils/convention-collective#entreprise", id: "site", target: "_blank"}"%>"> ? </a></div>
           <%= f.select :idcc, ::Conv::CCN_NAMES_AND_IDCC, {}, data: {controller: "select" }, class:"dropdown", placeholder: "Saisissez votre numéro IDCC ou le nom de votre convention"
           %>
+
 
           <%= f.label :contract, "Contrat" %>
           <%= f.select :contract, ["CDI", "CDD", "Apprentissage", "Contrat de professionnalisation"],
