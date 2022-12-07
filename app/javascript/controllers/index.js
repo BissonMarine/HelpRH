@@ -7,11 +7,14 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import PopoverController from "./popover_controller"
+application.register("popover", PopoverController)
+
 import ResultscrollController from "./resultscroll_controller"
 application.register("resultscroll", ResultscrollController)
 
-import SpinnerController from "./spinner_controller"
-application.register("spinner", SpinnerController)
-
 import SelectController from "./select_controller"
 application.register("select", SelectController)
+
+import SpinnerController from "./spinner_controller"
+application.register("spinner", SpinnerController)
