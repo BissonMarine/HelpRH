@@ -2,7 +2,7 @@ module Conv
   CCN_NAMES_AND_IDCC = {
     "" => "",
 
-    "CCN Aide accompagnement et soins et services à domicile (IDCC 2941)" => "2941",
+    "CCN Aide, accompagnement, soins et services à domicile (IDCC 2941)" => "2941",
 
     "CCN de la banque (IDCC 2120)" => "2120",
 
