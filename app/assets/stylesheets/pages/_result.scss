@@ -7,22 +7,22 @@
 }
 
 .detail-arborescence {
-  text-overflow: ellipsis;
-  overflow: hidden;
+  height: 70%;
+  overflow: scroll;
   white-space: nowrap;
-  details {
-    padding: 8px;
-  }
 
   summary {
       margin-bottom: 8px;
       padding: 8px;
       text-overflow: ellipsis;
+      overflow: hidden;
   }
 
 
   details[open] summary {
       margin-bottom: 8px;
+      text-overflow: ellipsis;
+      overflow: hidden;
   }
 }
 

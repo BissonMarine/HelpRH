@@ -1,5 +1,5 @@
 <%= render "shared/navbar" %>
-<div class="container screen-wrapper">
+<div class="screen-wrapper">
   <div class= "card-white-result d-flex">
     <%# arborescence de bootstrap %>
     <div class="arborescence">
@@ -9,22 +9,31 @@
       <div class="detail-arborescence">
           <details class="menu-deroulant">
             <summary>Clause 1 pppppppppppppppppppppppppppppppppppppp</summary>
+              <ul>
+                <details class="sous-menu">
+                  <summary>Titre 1</summary>
+                  <ul class="sous-sous-menu">
+                    <summary>Article 1</summary>
+                    <summary>Article 2</summary>
+                  </ul>
+                </details>
 
-              <details class="sous-menu">
-                <summary>Titre 1</summary>
-                <ul class="sous-sous-menu">
-                  <summary>Article 1</summary>
-                  <summary>Article 2</summary>
-                </ul>
-              </details>
+                <details class="sous-menu">
+                  <summary>Titre 2</summary>
+                  <ul class="sous-sous-menu">
+                    <summary>Article 1</summary>
+                    <summary>Article 2</summary>
+                  </ul>
+                </details>
 
-              <details class="sous-menu">
-                <summary>Titre 2</summary>
-                <ul class="sous-sous-menu">
-                  <summary>Article 1</summary>
-                  <summary>Article 2</summary>
-                </ul>
-              </details>
+                <details class="sous-menu">
+                  <summary>Titre 2</summary>
+                  <ul class="sous-sous-menu">
+                    <summary>Article 1</summary>
+                    <summary>Article 2</summary>
+                  </ul>
+                </details>
+              </ul>
           </details>
       </div>
     </div>
