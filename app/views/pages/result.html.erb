@@ -7,28 +7,25 @@
       <hr class="d-none d-md-block my-2">
       <%# <div class="collapse bd-toc-collapse" id="tocContents"> %>
       <div class="detail-arborescence">
-        <nav>
-          <ul>
-            <li class="menu-deroulant"><a>Clause</a>
-              <ul>
-                <li class="sous-menu"><a>Titre 1</a>
-                  <ul>
-                    <li><a>Art.9</a></li>
-                    <li><a>Art.10</a></li>
-                    <li><a>Art.11</a></li>
-                  </ul>
-                </li>
-                <li class="sous-menu"><a>Titre 2</a>
-                  <ul>
-                    <li><a>Art.12</a></li>
-                    <li><a>Art.13</a></li>
-                    <li><a>Art.14</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
+          <details class="menu-deroulant">
+            <summary>Clause 1 pppppppppppppppppppppppppppppppppppppp</summary>
+
+              <details class="sous-menu">
+                <summary>Titre 1</summary>
+                <ul class="sous-sous-menu">
+                  <summary>Article 1</summary>
+                  <summary>Article 2</summary>
+                </ul>
+              </details>
+
+              <details class="sous-menu">
+                <summary>Titre 2</summary>
+                <ul class="sous-sous-menu">
+                  <summary>Article 1</summary>
+                  <summary>Article 2</summary>
+                </ul>
+              </details>
+          </details>
       </div>
     </div>
     <%# -------------- %>
