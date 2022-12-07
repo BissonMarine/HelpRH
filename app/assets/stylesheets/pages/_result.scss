@@ -6,6 +6,11 @@
   padding: 20px;
 }
 
+.title-aside {
+  height: 145px;
+  overflow: scroll;
+}
+
 .detail-arborescence {
   height: 70%;
   overflow: scroll;
@@ -17,7 +22,6 @@
       text-overflow: ellipsis;
       overflow: hidden;
   }
-
 
   details[open] summary {
       margin-bottom: 8px;
