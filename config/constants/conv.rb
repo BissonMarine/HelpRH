@@ -2,33 +2,33 @@ module Conv
   CCN_NAMES_AND_IDCC = {
     "" => "",
 
-    "CCN de la Chimie (IDCC 44)" => "44",
-
-    "CCN des entreprises de propreté (IDCC 3043)" => "3043",
-
-    "CCN Syntec et bureaux d'études (IDCC 1486)" => "1486",
+    "CCN Aide accompagnement et soins et services à domicile (IDCC 2941)" => "2941",
 
     "CCN de la banque (IDCC 2120)" => "2120",
 
     "CCN des bâtiments ouvriers (+10 salariés) (IDCC 1597)" => "1597",
 
-    "CCN Commerce de gros (IDCC 573)" => "573",
+    "CCN Commerce détail et gros alimentaire (IDCC 2216)" => "2216",
 
-    "CCN Commerce détail et gros alimentaire" => "2216",
+    "CCN Commerce de gros (IDCC 0573)" => "573",
 
-    "CCN des services de l'automobile" => "1090",
+    "CCN de la Chimie (IDCC 0044)" => "44",
 
-    "CCN Hôtellerie, Cafés et Restauration" => "1979",
+    "CCN Établissements pour personnes inadaptées (IDCC 0413)" => "413",
 
-    "CCN des transports routiers" => "16",
+    "CCN des entreprises de propreté (IDCC 3043)" => "3043",
 
-    "CCN Hospitalisation à but non lucratif" => "29",
+    "CCN Hospitalisation à but non lucratif (IDCC 0029)" => "29",
 
-    "CCN Établissements pour personnes inadaptées" => "413",
+    "CCN Hospitalisation privée (IDCC 2264)" => "2264",
 
-    "CCN Hospitalisation privée" => "2264",
+    "CCN Hôtellerie, Cafés et Restauration (IDCC 1979)" => "1979",
 
-    "CCN Aide accompagnement et soins et services à domicile" => "2941"
+    "CCN des services de l'automobile (IDCC 1090)" => "1090",
+
+    "CCN Syntec et bureaux d'études (IDCC 1486)" => "1486",
+
+    "CCN des transports routiers (IDCC 0016)" => "16"
   }
 
   CONVENTIONS_ID = {
