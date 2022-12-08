@@ -14,11 +14,13 @@ class PagesController < ApplicationController
     # byebug
     response = HTTParty.post(url_api, headers: headers_api, body: body_api.to_json)
 
+    # raise
     ## ARBORESCENCE QUERY (IDCC 44) =
     # @headers_api = headers_api
     # @title = response["titre"]
     # @response = response
-    @highlighted_words = ["ancienneté", "contrat", params[:status], " ans", params[:main_subject]]
+    @highlighted_words = [params[:status], params[:main_subject]]
+    @highlighted_words << params[:secondary_subject] if params[:secondary_subject]
     @ccn_name = response["titre"]
     @idcc = response["numeroTexte"]
 
