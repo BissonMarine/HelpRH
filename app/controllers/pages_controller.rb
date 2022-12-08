@@ -1,11 +1,14 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :search, :result ]
+  skip_before_action :authenticate_user!, only: [ :home, :search, :result, :filter ]
 
   def home
     @relation = Conv::CONVENTIONS_ID
   end
 
   def search
+  end
+
+  def filter
   end
 
   def result
@@ -19,7 +22,7 @@ class PagesController < ApplicationController
     # @headers_api = headers_api
     # @title = response["titre"]
     # @response = response
-    @highlighted_words = [params[:status], params[:main_subject]]
+    @highlighted_words = [params[:main_subject]]
     @highlighted_words << params[:secondary_subject] if params[:secondary_subject]
     @ccn_name = response["titre"]
     @idcc = response["numeroTexte"]
@@ -71,6 +74,12 @@ class PagesController < ApplicationController
     # end
 
     @chapters.compact_blank
+
+    # render turbo_stream: turbo_stream.replace("article-result", render_to_string(partial: "pages/content", locals: {  }))
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
   end
 
   private
