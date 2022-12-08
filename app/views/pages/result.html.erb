@@ -29,34 +29,17 @@
     </div>
     
       <div class="detail-arborescence">
-          <details class="menu-deroulant">
-            <summary>Clause 1 ppppppppppppppppp</summary>
-              <ul>
-                <details class="sous-menu">
-                  <summary>Titre 1</summary>
-                  <ul class="sous-sous-menu">
-                    <summary>Article 1</summary>
-                    <summary>Article 2</summary>
-                  </ul>
-                </details>
+        <details class="menu-deroulant">
+            <summary>Liste des articles</summary>
+            <ul>
+              <% @chapters.each do |chapter| %>
+                <% if chapter["etat"] == "VIGUEUR_ETEN" || chapter["etat"] == "VIGUEUR_NON_ETEN"%>
+                  <summary class="articles-list"><%=chapter["title"]%></summary>
+                <% end %>
+              <% end %>
+            </ul>
+        </details>
 
-                <details class="sous-menu">
-                  <summary>Titre 2</summary>
-                  <ul class="sous-sous-menu">
-                    <summary>Article 1</summary>
-                    <summary>Article 2</summary>
-                  </ul>
-                </details>
-
-                <details class="sous-menu">
-                  <summary>Titre 2</summary>
-                  <ul class="sous-sous-menu">
-                    <summary>Article 1</summary>
-                    <summary>Article 2</summary>
-                  </ul>
-                </details>
-              </ul>
-          </details>
       </div>
     </div>
     <%# -------------- %>
