@@ -1,3 +1,13 @@
+// Pour toutes les pages
+.screen-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  max-width: 96%;
+}
+
 // Specific CSS for your home-page
 body {
   font-family: $font;
@@ -8,15 +18,22 @@ h2 {
   font-family: $font;
   color: #88A3DD;
   font-size: 30px;
+  margin-bottom: 30px;
 }
 
-.screen-wrapper {
-  height: 100%;
+.bloc-elements-home {
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-around;
+}
+
+.presentation-home {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  margin: 20px;
-  max-width: 96%;
+  padding-right: 15px;
 }
 
 .title-app{
@@ -27,9 +44,8 @@ h2 {
   margin-bottom: 50px;
 }
 
-
 .card-wrapper {
-  padding: 30px;
+  margin: 5px;
   text-align: center;
 }
 
@@ -48,6 +64,12 @@ h2 {
 
 .card-white-small {
   color: #88A3DD;
+}
+
+.else-cpm {
+  width: 100%;
+  margin: 40px 0;
+  padding: 30px;
 }
 
 .else-cpm:before,
