@@ -1,5 +1,5 @@
 .card-white-small {
-  width: 500px;
+  max-width: 35%;
   height: 75vh;
   padding: 20px;
   margin-bottom: 50px;
@@ -9,20 +9,21 @@
 }
 
 .card-white-medium {
-  width: 1080px;
+  width: 100%;
   height: 75vh;
   padding: 20px;
   margin-bottom: 50px;
+  margin-inline: 10px;
   background-color: white;
   box-shadow: 0px 4px 4px rgba($color: #375698, $alpha: 0.1);
   border-radius: 10px;
 }
 
 .card-white-result {
-  width: 1150px;
   height: 75vh;
   padding: 20px;
   margin-bottom: 50px;
+  margin-inline: 10px;
   background-color: white;
   box-shadow: 0px 4px 4px rgba($color: #375698, $alpha: 0.1);
   border-radius: 10px;
