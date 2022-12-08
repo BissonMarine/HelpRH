@@ -3,11 +3,11 @@
   <div class= "card-white-result d-flex">
     <%# arborescence %>
     <div class="arborescence">
-      <strong class="title-aside d-none d-md-block h6 my-2"><%= @ccn_name %></strong>
+      <strong class="title-aside d-none d-md-block h6 my-2"><%= @ccn_name.split(".").first %></strong>
       <hr class="d-none d-md-block my-2">
 
       <%# FORM GET POUR SECOND INPUT DE NOTRE QUERY %>
-    <div class="container d-block">
+    <div class="container d-block p-10">
       <p>Besoin d'affiner votre recherche ?</p>
       <div class="card-wrapper">
         <div class="input-style">
@@ -27,6 +27,7 @@
         </div>
       </div>
     </div>
+    <hr class="d-none d-md-block my-2">
       <div class="detail-arborescence">
         <details class="menu-deroulant">
             <summary>Liste des articles</summary>
