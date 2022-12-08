@@ -16,6 +16,11 @@
   overflow: scroll;
   white-space: nowrap;
 
+  .menu-deroulant {
+    height: 50%;
+    overflow: scroll;
+  }
+
   summary {
       margin-bottom: 8px;
       padding: 8px;
