@@ -67,7 +67,7 @@
         <% if chapter["etat"] == "VIGUEUR_ETEN" || chapter["etat"] == "VIGUEUR_NON_ETEN"%>
           <% if chapter["etat"] %>
             <% if chapter["title"].parameterize.underscore == params[:main_subject].parameterize.underscore %>
-              <h2 id="main-subject-chapter"><%= highlight(chapter["title"], @highlighted_words) do |match| %></h2>
+              <h2 class="titre-paragraphe" id="main-subject-chapter"><%= highlight(chapter["title"], @highlighted_words) do |match| %></h2>
                   <% if match == params[:secondary_subject] %>
                     <% "<mark class='secondary-mark'>#{match}</mark>".html_safe%>
                   <% else %>
@@ -75,9 +75,8 @@
                   <% end %>
                 <% end %>
             <% else %>
-              <h2><%= chapter["title"] %></h2>
+              <h2 class="titre-paragraphe"><%= chapter["title"] %></h2>
             <% end %>
-            <br>
             <% @chapter_articles = chapter["articles"]%>
             <% @chapter_articles.each do |article| %>
               <%= article_id = nil  %>
@@ -87,7 +86,7 @@
                 <% end %>
               <% end %>
               <% if @chapter_articles.count == 1 %>
-                <p id=<%=article_id%>>Article <%= article["num"]%></p><br>
+                <p class="style-article" id=<%=article_id%>>Article <%= article["num"]%></p>
                 <%= highlight(article["content"].html_safe, @highlighted_words) do |match|%>
                     <% if match == params[:secondary_subject] %>
                       <% "<mark class='secondary-mark'>#{match}</mark>".html_safe%>
@@ -95,11 +94,10 @@
                       <% "<mark class='primary-mark'>#{match}</mark>".html_safe%>
                     <% end %>
                   <% end %>
-
               <% elsif @chapter_articles.count > 1 %>
                 <% displayed_article = [] %>
                 <% if article["etat"] == "VIGUEUR_ETEN"%>
-                  <p id=<%=article_id%>>Article <%= article["num"]%></p><br>
+                  <p class="style-article" id=<%=article_id%>>Article <%= article["num"]%></p>
                   <% displayed_article << article["num"] %>
                   <%= highlight(article["content"].html_safe, @highlighted_words) do |match|%>
                     <% if match == params[:secondary_subject] %>
@@ -110,8 +108,9 @@
                   <% end %>
 
                 <% elsif article["etat"] == "VIGUEUR" && displayed_article == nil %>
-                  <p id=<%=article_id%>>Article <%= article["num"]%></p><br>
+                  <p class="style-article" id=<%=article_id%>>Article <%= article["num"]%></p>
                   <% displayed_article << article["num"] %>
+                  <%= highlight(article["content"].html_safe, @highlighted_words) %>
                 <% else %>
                 <% end %>
               <% end%>
