@@ -1,5 +1,15 @@
+.container {
+  margin-top: 10px;
+
+  label {
+    margin-bottom: 5px;
+  }
+}
+
 .search-partie-gauche {
   padding-inline: 30px;
+  margin-top: 10px;
+  width: 650px;
 
   h1 {
   font-weight:300;
@@ -22,10 +32,6 @@
   padding: 5px 10px;
 }
 
-.ts-control {
-  border: 0px solid transparent !important;
-}
-
 .instruction {
-  font-size: 14px;
+  margin: 30px 10px 0 0;
 }

@@ -10,12 +10,12 @@
           <%= params[:main_subject] %>
         </div>
       </div>
-    </div>
-    <%# PARTIE À DROITE %>
-    <div class="container col-6">
       <div class="instruction">
         <p class="text-align-center">Nous avons quelques questions complémentaires pour trouver le texte correspondant à votre situation !</p>
       </div>
+    </div>
+    <%# PARTIE À DROITE %>
+    <div class="container">
       <div class="input-style d-flex justify-content-center">
         <%= form_with url: result_path, method: :get do |f| %>
           <%= f.hidden_field :main_subject, value: params[:main_subject] %>
