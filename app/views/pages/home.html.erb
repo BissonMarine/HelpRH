@@ -29,35 +29,35 @@
               style: "font-family: 'Comfortaa'",
               required: true
             %>
-            <div class="btn-maj">
+            <div class="new-button">
               <%= submit_tag "Rechercher"%>
             </div>
           <% end %>
         </div>
 
       </div>
-      <h3 class="else-cpm text-center">OU</h3>
+      <h3 class="else-cpm text-center p-0">OU</h3>
       <%# Tag pour sujets réccurents %>
       <h2>Sujets récurrents</h2>
       <div class="d-flex flex-wrap">
-        <div class="btn-tag">
+        <div class="new-button">
           <%= link_to "congés payés", search_path(main_subject: "congés payés") %>
         </div>
 
-        <div class="btn-tag">
+        <div class="new-button">
           <%= link_to "heures supplémentaires", search_path(:main_subject => "heures supplémentaires") %>
         </div>
 
-        <div class="btn-tag">
+        <div class="new-button">
           <%= link_to "période d'essai", search_path(:main_subject => "période d'essai") %>
         </div>
 
-        <div class="btn-tag">
+        <div class="new-button">
           <%= link_to "rupture du contrat", search_path(:main_subject => "rupture du contrat") %>
         </div>
 
 
-        <div class="btn-tag">
+        <div class="new-button">
           <%= link_to "salaires", search_path(:main_subject => "salaires") %>
         </div>
       </div>

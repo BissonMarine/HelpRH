@@ -46,3 +46,96 @@
     border: 1px solid #88A3DD;
   }
 }
+
+
+.btn-maj input {
+  display: inline-block;
+  background-color: #88A3DD;
+  color: white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 5px;
+  width: 100%;
+  text-decoration: none;
+  border: 1px solid transparent;
+  font-family: $font;
+  font-weight: 700;
+  text-transform: uppercase;
+  &:hover {
+    color: #88A3DD;
+    background-color: white;
+    transition: 0.3s;
+    border: 1px solid #88A3DD;
+  }
+}
+
+.new-button {
+  display: inline-block;
+  border: 0;
+  background: transparent;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0px -0px 0px rgba(143, 64, 248, .5), 0px 0px 0px 0px rgba(39, 200, 255, .5);
+  transition : all .2s;
+  z-index: 1;
+  margin: 2px;
+  margin-bottom: 5px;
+
+}
+
+// .new-button-test {
+
+//   border: 0;
+//   background: transparent;
+//   color: white;
+//   position: relative;
+//   overflow: hidden;
+//   padding: 10px 30px;
+//   border-radius: 30px;
+//   cursor: pointer;
+//   box-shadow: 0px -0px 0px rgba(143, 64, 248, .5), 0px 0px 0px 0px rgba(39, 200, 255, .5);
+//   transition : all .2s;
+//   z-index: 1;
+
+// }
+.new-button input {
+  position: inherit;
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: white;
+  z-index: 10;
+}
+.new-button a {
+  position: inherit;
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: white;
+  z-index: 10;
+  text-decoration: none;
+}
+
+.new-button::after{
+  content:"";
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(225deg, #27d86c 0%, #26caf8 50%, #c625d0 100%);
+  position: absolute;
+  top: -50px;
+  left: -100px;
+  transition : all .5s;
+}
+
+.new-button:hover::after{
+  transform: rotate(150deg);
+}
+
+.new-button:hover{
+  transform: translate(0, -6px);
+  box-shadow: 10px -10px 25px 0px rgba(143, 64, 248, .25), -10px 10px 25px 0px rgba(39, 200, 255, .25);
+}
