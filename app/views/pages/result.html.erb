@@ -1,11 +1,10 @@
 <%= render "shared/navbar" %>
 <div class="screen-wrapper">
   <div class= "card-white-result d-flex">
-    <%# arborescence de bootstrap %>
+    <%# arborescence %>
     <div class="arborescence">
       <strong class="title-aside d-none d-md-block h6 my-2"><%= @ccn_name %></strong>
       <hr class="d-none d-md-block my-2">
-      <%# <div class="collapse bd-toc-collapse" id="tocContents"> %>
       <div class="detail-arborescence">
           <details class="menu-deroulant">
             <summary>Clause 1 pppppppppppppppppppppppppppppppppppppp</summary>
@@ -40,7 +39,7 @@
     <%# -------------- %>
 
     <div class="article-result" data-controller="resultscroll" >
-    <h1 class= "text-align-center d-flex"><%= @ccn_name %></h1><br>
+    <h1 class= "text-align-center d-flex"><%= @ccn_name.split(".").first %></h1><br>
       <% @chapters.each do |chapter| %>
         <% if chapter["etat"] == "VIGUEUR_ETEN" || chapter["etat"] == "VIGUEUR_NON_ETEN"%>
           <% if chapter["etat"] %>
