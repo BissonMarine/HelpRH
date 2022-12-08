@@ -74,6 +74,12 @@ class PagesController < ApplicationController
     # end
 
     @chapters.compact_blank
+
+    # render turbo_stream: turbo_stream.replace("article-result", render_to_string(partial: "pages/content", locals: {  }))
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
   end
 
   private

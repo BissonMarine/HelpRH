@@ -1,4 +1,4 @@
-  <div data-controller="content" data-content-target="article-result" id="article-result" class="article-result" data-controller="resultscroll" >
+  <div data-content-target="articleResult" id="article-result" class="article-result" data-controller="resultscroll" >
     <h1 class= "text-align-center d-flex"><%= @ccn_name.split(".").first %></h1><br>
       <% @chapters.each do |chapter| %>
         <% if chapter["etat"] == "VIGUEUR_ETEN" || chapter["etat"] == "VIGUEUR_NON_ETEN"%>

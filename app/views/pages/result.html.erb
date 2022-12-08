@@ -1,5 +1,5 @@
 <%= render "shared/navbar" %>
-<div class="screen-wrapper" data-controller="chapters">
+<div class="screen-wrapper" data-controller="chapters content">
   <div class= "card-white-result d-flex">
     <%# arborescence %>
     <div class="arborescence">
@@ -11,7 +11,7 @@
       <p>Besoin d'affiner votre recherche ?</p>
       <div class="card-wrapper">
         <div class="input-style">
-          <%= form_with url: filter_path, method: :get do %>
+          <%= form_with url: result_path, method: :get, data: { content_target: "form" } do %>
             <%= hidden_field_tag :main_subject, params[:main_subject] %>
             <%= hidden_field_tag :idcc, params[:idcc] %>
             <%= hidden_field_tag :status, params[:status] %>
