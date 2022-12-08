@@ -18,3 +18,6 @@ application.register("select", SelectController)
 
 import SpinnerController from "./spinner_controller"
 application.register("spinner", SpinnerController)
+
+import TypedJsController from "./typed_js_controller"
+application.register("typed-js", TypedJsController)
