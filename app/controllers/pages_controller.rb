@@ -1,11 +1,14 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :search, :result ]
+  skip_before_action :authenticate_user!, only: [ :home, :search, :result, :filter ]
 
   def home
     @relation = Conv::CONVENTIONS_ID
   end
 
   def search
+  end
+
+  def filter
   end
 
   def result
