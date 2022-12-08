@@ -27,18 +27,18 @@
           </div>
           <hr class="d-none d-md-block my-2">
         </div>
-      </div>
-      <div class="detail-arborescence">
-        <details class="menu-deroulant">
-            <summary>Liste des articles</summary>
-            <ul>
-              <% @chapters.each_with_index do |chapter, index| %>
-                <% if chapter["etat"] == "VIGUEUR_ETEN" || chapter["etat"] == "VIGUEUR_NON_ETEN"%>
-                  <summary class="articles-list" data-index="<%=index%>" data-action="click->chapters#scroll" ><%=chapter["title"]%></summary>
+        <div class="detail-arborescence">
+          <details>
+              <summary>Liste des articles</summary>
+              <ul>
+                <% @chapters.each_with_index do |chapter, index| %>
+                  <% if chapter["etat"] == "VIGUEUR_ETEN" || chapter["etat"] == "VIGUEUR_NON_ETEN"%>
+                    <summary class="articles-list" data-index="<%=index%>" data-action="click->chapters#scroll" ><%=chapter["title"]%></summary>
+                  <% end %>
                 <% end %>
-              <% end %>
-            </ul>
-        </details>
+              </ul>
+          </details>
+        </div>
       </div>
     </div>
     <%# -------------- %>

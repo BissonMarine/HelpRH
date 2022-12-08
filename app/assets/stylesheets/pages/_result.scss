@@ -12,18 +12,18 @@
   overflow: scroll;
 }
 
-.seach-result {
+.search-result {
   padding: 0;
+  height: 70%;
+
 }
 
 .detail-arborescence {
-  height: 70%;
+  height: 50%;
   overflow: scroll;
   white-space: nowrap;
 
   .menu-deroulant {
-    height: 80%;
-    overflow: scroll;
   }
 
   summary {
