@@ -16,7 +16,7 @@
             <%= hidden_field_tag :idcc, params[:idcc] %>
             <%= hidden_field_tag :status, params[:status] %>
             <%= text_field_tag :secondary_subject, {},
-              placeholder: "Taper ici votre second mot clé",
+              placeholder: "Taper votre second mot clé",
               style: "font-family: 'Comfortaa'",
               required: true
             %>
@@ -27,7 +27,6 @@
         </div>
       </div>
     </div>
-
       <div class="detail-arborescence">
         <details class="menu-deroulant">
             <summary>Liste des articles</summary>
@@ -88,7 +87,6 @@
                       <% "<mark class='primary-mark'>#{match}</mark>".html_safe%>
                     <% end %>
                   <% end %>
-
                 <% elsif article["etat"] == "VIGUEUR" && displayed_article == nil %>
                   <p class="style-article" id=<%=article_id%>>Article <%= article["num"]%></p>
                   <% displayed_article << article["num"] %>
