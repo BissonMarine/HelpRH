@@ -19,7 +19,7 @@ class PagesController < ApplicationController
     # @headers_api = headers_api
     # @title = response["titre"]
     # @response = response
-    @highlighted_words = [params[:status], params[:main_subject]]
+    @highlighted_words = [params[:main_subject]]
     @highlighted_words << params[:secondary_subject] if params[:secondary_subject]
     @ccn_name = response["titre"]
     @idcc = response["numeroTexte"]
