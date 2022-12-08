@@ -9,7 +9,8 @@ export default class extends Controller {
   }
 
   scroll(event){
-    const positionIndex = event.target.dataset.index
+    console.log("connected to scroll controller");
+    const positionIndex = event.target.dataset.index;
     this.positionTargets[positionIndex].scrollIntoView()
   }
 }
