@@ -1,10 +1,10 @@
 <%= render "shared/navbar" %>
-<div class="container screen-wrapper">
-  <div class="d-flex align-items-center justify-content-center flex-grow-1">
+<div class="screen-wrapper">
+  <div class="bloc-elements-home">
     <%# PARTIE À GAUCHE %>
-    <div class="col-7 d-flex flex-column align-items-start justify-content-center">
-      <h1 class="title-app w-100">Help RH</h1>
-      <div class="intro-app w-80">
+    <div class="presentation-home">
+      <h1 class="title-app">Help RH</h1>
+      <div class="intro-app">
         <div class="intro-app-bold">
           <p>
             Salariés, protégez-vous, et apprenez à faire respecter vos droits !
@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <div class="card-white-small col-5">
+    <div class="card-white-small">
       <%# PARTIE À DROITE %>
       <%# formulaire de la homepage pour trouver le sujet principal %>
       <h2>Votre recherche</h2>
@@ -36,10 +36,10 @@
         </div>
 
       </div>
-      <h3 class="text-center my-3 p-3 else-cpm">OU</h3>
+      <h3 class="else-cpm text-center">OU</h3>
       <%# Tag pour sujets réccurents %>
       <h2>Sujets récurrents</h2>
-      <div class="d-flex flex-wrap p-3">
+      <div class="d-flex flex-wrap">
         <div class="btn-tag">
           <%= link_to "congés payés", search_path(main_subject: "congés payés") %>
         </div>
