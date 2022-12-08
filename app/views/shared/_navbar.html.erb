@@ -3,34 +3,33 @@
     <%#= link_to root_path, class: "navbar-brand mx-3" do %>
       <%#= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <%# end %>
-    <%= link_to "HRH", root_path, class: "navbar-brand mx-3" %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <%= link_to image_tag("HRHelp-logo.png", class: "logo"), root_path %>
+    <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
+          <%# <li class="nav-item active">
             <%= link_to "Apprendre à se défendre", "#", class: "nav-link mx-3" %>
-          </li>
+          <%# </li>
           <li class="nav-item active">
             <%= link_to "Qui sommes-nous ?", "#", class: "nav-link mx-3" %>
-          </li>
+          <%# </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle mx-3", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <%# <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Mon profile", "#", class: "dropdown-item" %>
-              <%= link_to "Déconnexion", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
+              <%# <%= link_to "Déconnexion", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+            <%# </div>
           </li>
         <% else %>
-          <li class="nav-item">
+          <%# <li class="nav-item">
             <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
-          </li>
+          <%# </li>
         <% end %>
-      </ul>
-    </div>
+      <%# </ul>
+    </div> %>
   </div>
 </div>

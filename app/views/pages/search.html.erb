@@ -1,5 +1,5 @@
 <%= render "shared/navbar" %>
-<div class="container screen-wrapper">
+<div class="screen-wrapper">
   <div class="card-white-medium d-flex justify-content-center">
     <%# PARTIE À GAUCHE %>
     <div class="search-partie-gauche">
@@ -64,8 +64,8 @@
           %>
 
           <div class="d-flex justify-content-center" data-controller="spinner">
-            <div data-spinner-target="submit" class="btn-maj">
-              <%= f.submit "Rechercher", class:"btn-maj", data: { action: "click->spinner#spinShow"} %>
+            <div data-spinner-target="submit" class="new-button">
+              <%= f.submit "Rechercher", data: { action: "click->spinner#spinShow"} %>
             </div>
             <div data-spinner-target="circle" class="hidden">
               <%= image_tag "spinner.gif", :class => "" %>
