@@ -67,8 +67,15 @@
             <div data-spinner-target="submit" class="new-button">
               <%= f.submit "Rechercher", data: { action: "click->spinner#spinShow"} %>
             </div>
-            <div data-spinner-target="circle" class="hidden">
-              <%= image_tag "spinner.gif", :class => "" %>
+            <div data-spinner-target="circle" class="lds-roller hidden">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
             </div>
           </div>
         <% end %>
