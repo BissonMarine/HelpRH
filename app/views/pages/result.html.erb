@@ -6,9 +6,34 @@
       <strong class="title-aside d-none d-md-block h6 my-2"><%= @ccn_name %></strong>
       <hr class="d-none d-md-block my-2">
       <%# <div class="collapse bd-toc-collapse" id="tocContents"> %>
+
+      <%# FORM GET POUR SECOND INPUT DE NOTRE QUERY %>
+      <%# <><%= link_to 'licenciement', result_path(main_subject: params[:main_subject], secondary_subject: 'licenciement', idcc: params[:idcc], status: params[:status]) %>
+    <div>
+      <p>Besoin d'affiner votre recherche ?</p>
+      <div class="card-wrapper">
+        <div class="input-style">
+          <%= form_with url: result_path, method: :get do %>
+            <%= hidden_field_tag :main_subject, params[:main_subject] %>
+            <%= hidden_field_tag :idcc, params[:idcc] %>
+            <%= hidden_field_tag :status, params[:status] %>
+            <%= text_field_tag :secondary_subject, {},
+              placeholder: "Taper ici votre second mot clé",
+              style: "font-family: 'Comfortaa'",
+              required: true
+            %>
+            <div class="btn-maj">
+              <%= submit_tag "Affiner" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+
       <div class="detail-arborescence">
           <details class="menu-deroulant">
-            <summary>Clause 1 pppppppppppppppppppppppppppppppppppppp</summary>
+            <summary>Clause 1 ppppppppppppppppp</summary>
               <ul>
                 <details class="sous-menu">
                   <summary>Titre 1</summary>
@@ -61,12 +86,14 @@
               <% if @chapter_articles.count == 1 %>
                 <p id=<%=article_id%>>Article <%= article["num"]%></p><br>
                 <%= highlight(article["content"].html_safe, @highlighted_words ) %>
+
               <% elsif @chapter_articles.count > 1 %>
                 <% displayed_article = [] %>
                 <% if article["etat"] == "VIGUEUR_ETEN"%>
                   <p id=<%=article_id%>>Article <%= article["num"]%></p><br>
                   <% displayed_article << article["num"] %>
                   <%= highlight(article["content"].html_safe, @highlighted_words) %>
+
                 <% elsif article["etat"] == "VIGUEUR" && displayed_article == nil %>
                   <p id=<%=article_id%>>Article <%= article["num"]%></p><br>
                   <% displayed_article << article["num"] %>
