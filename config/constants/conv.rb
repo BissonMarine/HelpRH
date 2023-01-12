@@ -6,8 +6,6 @@ module Conv
 
     "CCN de la banque (IDCC 2120)" => "2120",
 
-    "CCN des bâtiments ouvriers (+10 salariés) (IDCC 1597)" => "1597",
-
     "CCN Commerce détail et gros alimentaire (IDCC 2216)" => "2216",
 
     "CCN Commerce de gros (IDCC 0573)" => "573",
@@ -28,7 +26,124 @@ module Conv
 
     "CCN Syntec et bureaux d'études (IDCC 1486)" => "1486",
 
-    "CCN des transports routiers (IDCC 0016)" => "16"
+    "CCN des transports routiers (IDCC 0016)" => "16",
+
+    "CCN de la métallurgie, Région Parisienne (IDCC 00054)" => ,
+
+    "CCN de la métallurgie, cadres (IDCC 0650)" => ,
+
+    "CCN de la métallurgie, Midi-Pyrénées (IDCC 01059)" => ,
+
+    "CCN du bâtiment, ouvriers jusqu'à 10 salariés (IDCC 01596)" => ,
+
+    "CCN du bâtiment, ouvriers plus de 10 salariés (IDCC 01597)" => ,
+
+    "CCN des travaux publics ouvriers (IDCC 01702)" => ,
+
+    "CCN du bâtiment, cadres (IDCC 02420)" => ,
+
+    "CCN du bâtiment, ETAM (IDCC 02609)" => ,
+
+    "CCN des travaux publics, ETAM (IDCC 02614)" =>,
+
+    "CCN des travaux publics, cadres (IDCC 03212)" =>,
+
+    "CCN industrie pharmaceutique (IDCC 00176)" =>,
+
+    "CCN pharmacie d'officine (IDCC 01996)" =>,
+
+    "CCN caoutchouc (IDCC 00045)" =>,
+
+    "CCN plasturgie (IDCC 00292)" =>,
+
+    "CCN negoce des matériaux de construction (IDCC 03216)" =>,
+
+    "CCN ameublement-négoce de l'ameublement (IDCC 01880)" =>,
+
+    "CCN industries textiles (IDCC 00018)" =>,
+
+    "CCN succursales de vente au détail d'habillement (IDCC 00675)" =>,
+
+    "CCN commerce de détaul d'habillement textiles (IDCC O1483)" =>,
+
+    "CCN commerce articles de sports équipements loisirs (IDCC 01557)" =>,
+
+    "CCN publicité (IDCC 00086)" =>,
+
+    "CCN commerce de détail papeterie bureau informatique (IDCC 01539)" =>,
+
+    "CCN télécommunications (IDCC 02148)" =>,
+
+    "CCN boulangeries pâtisseries artisanales (IDCC 00843)" =>,
+
+    "CCN commerce de détail fruits et légumes épicerie (IDCC 01505)" =>,
+
+    "CCN cinq branches-industries alimentaires diverses (IDCC 03109)" =>,
+
+    "CCN commerces de gros (IDCC 00573)" =>,
+
+    "CCN commerce détail et gros à prédominance alimentaire (IDCC 02216)" =>,
+
+    "CCN commerce de détail non alimentaire (IDCC 01517)" =>,
+
+    "CCN bricolage (vente au détail en libre-service) (IDCC 01606)" =>,
+
+    "CCN commerce audiovisuel électronique équipement ménager (IDCC 01686)" =>,
+
+    "CCN services de l'automobile (IDCC 01090)" =>,
+
+    "CCN commerce rép. tracteurs, matériel agricole, bâtiment, travaux publics (IDCC 01404)" =>,
+
+    "CCN restauration de collectivités (IDCC 01266)" =>,
+
+    "CCN restauration rapide (IDCC 01501)" =>,
+
+    "CCN Hôtels Cafés Restaurants (IDCC 01979)" =>,
+
+    "CCN transports routiers (IDCC 00016)" =>,
+
+    "CCN transports aériens, personnel au sol (IDCC 00275)" =>,
+
+    "CCN transports publics urbains de voyageurs (IDCC 01424)" =>,
+
+    "CCN ferroviaire, dispositions générales (IDCC 03217)" =>,
+
+    "CCN cabinets médicaux (IDCC 01147)" =>,
+
+    "CCN hospitalisation privée (IDCC 02264)" =>,
+
+    "CCN sociétés d'assurances (IDCC 01672)" =>,
+
+    "CCN banques (" =>,
+
+    "CCN " =>,
+
+    "CCN " =>,
+
+    "CCN " =>,
+
+    "CCN " =>,
+
+    "CCN " =>,
+
+    "CCN " =>,
+
+    "CCN " =>,
+
+    "CCN " =>,
+
+    "CCN " =>,
+
+
+
+
+
+
+
+
+
+
+
   }
 
   CONVENTIONS_ID = {
