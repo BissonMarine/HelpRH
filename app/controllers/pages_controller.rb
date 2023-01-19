@@ -14,8 +14,9 @@ class PagesController < ApplicationController
   def result
     @token = get_token
     url_api = "https://sandbox-api.piste.gouv.fr/dila/legifrance-beta/lf-engine-app/consult/kaliContIdcc"
-    # byebug
+    #byebug
     response = HTTParty.post(url_api, headers: headers_api, body: body_api.to_json)
+
 
     # raise
     ## ARBORESCENCE QUERY (IDCC 44) =
@@ -88,7 +89,7 @@ class PagesController < ApplicationController
     url_token = "https://sandbox-oauth.piste.gouv.fr/api/oauth/token"
     oauth_response = HTTParty.post(url_token, headers: headers_token, body: body_token)
     oauth_response.parsed_response["access_token"]
-    # raise
+
   end
 
 # attention: pour activer le cache, lancer "rails dev:cache" dans le terminal
@@ -117,6 +118,7 @@ class PagesController < ApplicationController
       "client_secret": ENV["CLIENT_SECRET"],
       "scope": "openid"
     }
+    
   end
 
   def headers_token
