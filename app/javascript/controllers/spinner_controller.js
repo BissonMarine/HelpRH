@@ -7,7 +7,6 @@ export default class extends Controller {
     console.log("Connected to spinner controller")
   }
   spinShow() {
-    console.log("oui");
     this.submitTarget.classList.add("hidden");
     this.circleTarget.classList.remove("hidden");
     this.circleTarget.classList.add("block");

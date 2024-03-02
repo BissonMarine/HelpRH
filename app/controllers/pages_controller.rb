@@ -3,6 +3,9 @@ class PagesController < ApplicationController
 
   def home
     @relation = Conv::CONVENTIONS_ID
+    @meta_title = "HelpRH | Salariés, apprenez à faire respecter vos droits"
+    @meta_description = "Description de votre page"
+    @meta_image = "URL de votre image"
   end
 
   def search
@@ -13,10 +16,9 @@ class PagesController < ApplicationController
 
   def result
     @token = get_token
-    url_api = "https://sandbox-api.piste.gouv.fr/dila/legifrance-beta/lf-engine-app/consult/kaliContIdcc"
+    url_api = "https://sandbox-api.piste.gouv.fr/dila/legifrance/lf-engine-app/consult/kaliContIdcc"
     #byebug
     response = HTTParty.post(url_api, headers: headers_api, body: body_api.to_json)
-
 
     # raise
     ## ARBORESCENCE QUERY (IDCC 44) =
@@ -89,7 +91,6 @@ class PagesController < ApplicationController
     url_token = "https://sandbox-oauth.piste.gouv.fr/api/oauth/token"
     oauth_response = HTTParty.post(url_token, headers: headers_token, body: body_token)
     oauth_response.parsed_response["access_token"]
-
   end
 
 # attention: pour activer le cache, lancer "rails dev:cache" dans le terminal
